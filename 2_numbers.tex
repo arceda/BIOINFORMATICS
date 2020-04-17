@@ -42,12 +42,12 @@
 
 \title[] % [] is optional - is placed on the bottom of the sidebar on every slide
 { % is placed on the title page
-      \textbf{Bioinformatics}
+      \textbf{Bioinfomatics}
 }
 
-\subtitle[Introduction  to Bioinformatics]
+\subtitle[Genomes by numbers]
 {
-      \textbf{Introduction  to Bioinformatics}
+      \textbf{Genomes by numbers}
 }
 
 \author[MSc. Vicente Machaca Arceda]
@@ -84,6 +84,7 @@
 %-------------------------------------------------------
 % THE TITLEPAGE
 %-------------------------------------------------------
+
 {\1% % this is the name of the PDF file for the background
 \begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
   \titlepage % call the title page information from above
@@ -95,9 +96,9 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-%\begin{frame}{Introduction  to Bioinformatics}{}
+%\begin{frame}{Genomes by numbers}{}
 %\centering
-%\textbf{INTRODUCTION TO BIOINFORMATICS} \\
+%\textbf{GENOMES BY NUMBERS} \\
 %MSc. Vicente Machaca Arceda 
 %\end{frame}
 %-------------------------------------------------------
@@ -105,7 +106,7 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Overview}
+\begin{frame}{Table of Contents}
 \tableofcontents
 \end{frame}
 %-------------------------------------------------------
@@ -122,207 +123,20 @@
 %-------------------------------------------------------
 \begin{frame}{Objectives}{}
 \begin{itemize}
-    \item<1-> Understand what is Bioinformatics, computer biology and computation molecular biology. 
-    \item<2-> Understand about the biology of DNA.
-    \item<3-> Understand how is the process of protein synthesis from DNA.
+    \item<1-> Understand the size of our genome. 
+    \item<2-> Understand the lack of research in Genomics.
   \end{itemize}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Motivation}
+\subsection{The biology of cells: Summary}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Motivation}{What microorganism live in our armpits or in our mouths?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/mot1.jpg}
-    \label{img:mot1}
-    \caption{What microorganism live in our armpits or in our mouths?}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Motivation}{Is there a kindness gene?
-}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/mot2.jpg}
-    \label{img:mot2}
-    \caption{Is there a kindness gene?}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Motivation}{Why a person has cancer?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/mot3.jpg}
-    \label{img:mot2}
-    \caption{Why a person has cancer?}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Motivation}{Why some medicines no work in some persons?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/mot4.jpg}
-    \label{img:mot2}
-    \caption{Why some medicines no work in some persons?}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Motivation}{Treatment Development}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/mot5.jpg}
-    \label{img:mot2}
-    \caption{Personalized Medicine: New Approach to Treatment of Disease}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{What is Bioinformatics?}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------
-\begin{frame}{Introduction}{What is Bioinformatics?}
-%-------------------------------------------------------
-
-    According to Luscombe et al.: \textbf{Bioinformatics} involves the technology that uses computers for storage, retrieval, manipulation, and distribution of information related to biological macromolecules such as DNA, RNA, and proteins \cite{luscombe2001bioinformatics}.
-
-\end{frame}
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Introduction}{Bioinformatics vs Computational Biology}
-\textbf{Bioinformatics} is limited to sequence, structural, and functional analysis of genes and genomes and their corresponding products and is often considered \textbf{Computational
-molecular biology}. However, \textbf{Computational Biology} encompasses all biological areas that involve computation \cite{xiong2006essential}.
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{Introduction}{Genomics}
-\textbf{Genomics} is the study of whole genomes of organisms. Genomics uses a combination of recombinant DNA, DNA sequencing methods, and bioinformatics to sequence, assemble, and analyse the structure and function of genomes. It differs from classical \textbf{Genetics} in that it study genes and their heredity meanwhile Genomics study the whole genome  \cite{archibald2018genomics}.
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-
-\section{The biology of cells}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Where is DNA?}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{Where is DNA?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio1.jpg}
-    \label{img:mot2}
-    \caption{Where DNA is located in prokaryote and eukaryote cells \cite{archibald2018genomics}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{Where is DNA?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio2.jpg}
-    \label{img:mot2}
-    \caption{The 23 pairs of chromosomes in human cells \cite{archibald2018genomics}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{Where is DNA?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio3.jpg}
-    \label{img:mot2}
-    \caption{Chromatin: Material composed of DNA and proteins that condense to form chromosomes \cite{archibald2018genomics}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{Where is DNA?}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio4.jpg}
-    \label{img:mot2}
-    \caption{Where DNA is located \cite{dna2020located}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{DNA structure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{DNA structure}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/bio6.jpg}
-    \label{img:mot2}
-    \caption{Molecules in DNA. Adenine, Thymine, Guanine and Cytosine \cite{dna2020located}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{DNA structure}
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/bio7.jpg}
-    \label{img:mot2}
-    \caption{DNA structure \cite{dnastructure2020}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{DNA structure}
+\begin{frame}{Introduction}{The biology of cells: Summary}
 \begin{figure}[]
  \centering
     \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio8.jpg}
@@ -333,36 +147,14 @@ molecular biology}. However, \textbf{Computational Biology} encompasses all biol
 %-------------------------------------------------------
 %-------------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Transcription and Translation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{The biology of cells}{Transcription and Translation}
+\begin{frame}{Introduction}{The biology of cells: Summary}
 \begin{figure}[]
  \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio9.jpg}
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/trans.jpg}
     \label{img:mot2}
-    \caption{Transcription and Translation \cite{dnacromosome2020}.}
-\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{From DNA to Protein}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{The biology of cells}{From DNA to Protein}
-\href{https://www.youtube.com/watch?v=gG7uCskUOrA}{Click here to see the video} \\
-\begin{figure}[]
- \centering
-    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio10.jpg}
-    \label{img:mot2}
-    \caption{Video from DNA to protein.}
+    \caption{Transcription and translation \cite{nci2020}.}
 \end{figure}
 \end{frame}
 %-------------------------------------------------------
@@ -370,15 +162,227 @@ molecular biology}. However, \textbf{Computational Biology} encompasses all biol
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-%\begin{frame}{Bioinformatics}{Homework}
-%    Register to the following courses and bring yours certificated of accomplish: \\
-%    \begin{itemize} 
-%        \item \href{https://edu.t-bio.info/course/introduction-bioinformatics/}{Introduction to Bioinformatics (6 hours) } \\
-%        \item \href{https://edu.t-bio.info/course/introduction-to-genomics/}{Introduction to Genomics (4 hours)}
-%    \end{itemize}
-%\end{frame}
+\begin{frame}{Introduction}{The biology of cells: Summary}
+\begin{figure}[]
+ \centering
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/alt.jpg}
+    \label{img:mot2}
+    \caption{Alternative splicing \cite{genbio2020}.}
+\end{figure}
+\end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
+
+
+\section{Numbers and Databases}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Genomes by numbers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Numbers of base pairs}
+
+\begin{block}{}
+\centering
+The human genome is made of \textbf{\string ~3.2 billions bp} of DNA. \\
+\string ~6.4 billions of nucleotides \cite{archibald2018genomics}.
+\end{block}
+
+\begin{block}{}
+\centering
+The HIV-1 genome is made of \textbf{\string ~20k bp} of DNA. \\
+Meanwhile, the COVID-19 is made of \textbf{\string ~32k bp} \cite{randhawa2020machine}.
+\end{block}
+
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Numbers of genes}
+
+\begin{block}{}
+\centering
+There are approximately \textbf{19000} to \textbf{25000} genes. \\
+No one knows for sure \cite{archibald2018genomics}.
+\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Percentage of protein-coding genes}
+
+\begin{block}{}
+\centering
+Only \textbf{\string ~1 per cent} of the human genome correspond to protein-coding genes. \cite{archibald2018genomics}.
+\end{block}
+
+\begin{block}{}
+\centering
+Human genes have dozens of introns, each of which can be tens of thousands of nucleotides. Distinguishing exons from introns and other forms of non-coding DNA is challenging \cite{archibald2018genomics}.
+\end{block}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Databases}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Databases}
+
+\begin{tabular}{ll}
+\textbf{Database} & \textbf{Description}                                                \\
+\hline
+\href{https://www.ncbi.nlm.nih.gov/genbank/}{GenBank}   & Genetic sequence database                                       \\
+\href{https://blast.ncbi.nlm.nih.gov/Blast.cgi}{BLAST}    & Finds regions of similarity between biological sequences    \\
+\href{https://www.viprbrc.org/}{ViPR}     & Viral genomes database                                                       \\
+\href{https://www.cancer.gov/}{TCGA}     & The Cancer Genome Atlas                                                       \\
+ \href{https://dcc.icgc.org/}{ICGC}     & International Cancer Genome Consortium                        \\      
+\end{tabular}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Databases types}
+\centering
+\begin{tabular}{ll}
+\textbf{Primary} & \textbf{Secondary}                                \\
+\hline
+GenBank    & RefSeq    \\
+UniProt    & Genes  \\
+PubMed    & Taxon  \\
+PMC    & OMIM  \\
+Intact & ICGC \\
+\end{tabular}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Databases}
+\begin{figure}[]
+ \centering
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/dat.jpg}
+    \label{img:mot2}
+    \caption{Downloading sequencing data}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Cloud computing and new software paradigm}
+\begin{itemize}
+\item Data sets are in Petabyte and soon Exabyte scale.
+\item Data (and the security rules that come with it) will be somewhere (not in our own data centre), and you will move your software to it.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{DNA sequence formats}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{Cloud computing and new software paradigm}
+\begin{itemize}
+\item FASTA, FASTAQ.
+\item EMBL.
+\item GCG.
+\item GenBank.
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{FASTA format}
+\begin{figure}[]
+ \centering
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/fasta.jpg}
+    \label{img:mot2}
+    \caption{FASTA format example}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{EMBL format}
+\begin{figure}[]
+ \centering
+    \includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/embl.jpg}
+    \label{img:mot2}
+    \caption{EMBL format example}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{A2M format}
+The \textbf{A2M format} is used as the primary format for multiple alignments of protein or nucleic-acid sequences. For proteins, the legal alphabet is:
+\begin{itemize}
+    \item  ACDEFGHIKLMNPQRSTVWY for amino acids
+    \item  X for any amino acid
+    \item  B for N or D
+    \item  Z for Q or E
+    \item  O for creating a free-insertion module (FIM) 
+\end{itemize}
+
+For nucleic acids, the legal alphabet in SAM is:
+\begin{itemize}
+    \item  ACGTU for nucleotides (with T and U considered equivalent)
+    \item  Y for C or T
+    \item  R for A or G
+    \item  N for any nucleotide
+    \item  O for creating a free-insertion module (FIM) 
+\end{itemize}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Numbers and Databases}{GOBLET}
+\begin{figure}[]
+ \centering
+    \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/numbers/gob.jpg}
+    \label{img:mot2}
+    \caption{GOBLET}
+\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
 
 %-------------------------------------------------------
 %-------------------------------------------------------
