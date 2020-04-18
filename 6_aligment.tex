@@ -207,7 +207,7 @@ formation is important for drug designers \cite{elfiky2020anti}.}
 \begin{frame}{Previous concepts}{Mutations types}
 	\begin{block}{}
 		\begin{itemize}
-			\item \textbf{Point mutations}, are changes to one base in the DN.
+			\item \textbf{Point mutations}, are changes to one base in the DNA.
 			\item \textbf{Block mutations}, are changes to segments of a chromosome, resulting in large scale changes in the DNA.
 		\end{itemize}	
 	\end{block}
@@ -235,7 +235,7 @@ formation is important for drug designers \cite{elfiky2020anti}.}
 		\centering
 		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/alignment/block_mutations_med.jpg}
 		\label{img:alig}
-		\caption{Overview of the Different Types of Point Mutations.}
+		\caption{Overview of the Different Types of Block Mutations.}
 	\end{figure}
 \end{frame}
 %-------------------------------------------------------
@@ -284,6 +284,7 @@ formation is important for drug designers \cite{elfiky2020anti}.}
 	\begin{block}{Frameshift mutation}
 	Also called a framing error or a reading frame shift. It is a genetic mutation (insertions or deletions) of nucleotides that is not divisible by three. 
 	\end{block}
+	\pause
 	\begin{block}{}
 	Due to the triplet nature of gene expression by codons, the insertion or deletion can change the reading frame (the grouping of the codons), resulting in a completely different translation from the original.
 	\end{block}
@@ -356,7 +357,7 @@ According to Xiong \cite{xiong2006essential}:
     \item When two sequences are descended from a common evolutionary origin, they have 
 homologous relationship or share \textbf{homology}.
     \item Sequence similarity is the \textbf{percentage} of aligned residues that are similar.
-    \item Sequence similarity and sequence identity are synonymous for nucleotide sequences. In a protein sequence alignment, sequence identity refers to the \textbf{percentage} of matches of the same amino acid residues; similarity refers to the \textbf{percentage} of aligned residues that have similar physicochemical characteristics ( size, charge, and hydrophobicity).
+    \item Sequence similarity and sequence identity are synonymous for nucleotide sequences but different in a protein sequence. \textbf{Sequence identity} refers to the \textbf{percentage} of matches of the same amino acid residues; \textbf{sequence similarity} refers to the \textbf{percentage} of aligned residues that have similar physicochemical characteristics ( size, charge, and hydrophobicity).
 
 \end{itemize}
 \end{frame}
@@ -517,6 +518,63 @@ dimensional matrix \cite{xiong2006essential}.
 	
 	\begin{figure}[]
 		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/alignment/dot_plot4.jpg}
+		\label{img:uniprot}
+		\caption{Dot matrix example}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix}
+	\centering
+	\textbf{What we could conclude from the Dot plot?}	 
+	\begin{figure}[]		
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/alignment/dot_plot1.png}
+		\label{img:uniprot}
+		\caption{Dot matrix example. $seq1 = ACCTGAGAGTGTGGCT$ and $seq2 = ACCTGAGACAGTGGCT$}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix}
+	\centering
+	\textbf{What we could conclude from the Dot plot?}	 
+	\begin{figure}[]		
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/alignment/dot_plot2.png}
+		\label{img:uniprot}
+		\caption{Dot matrix example. $seq1 = ACCTGAGACATTGTGGCT$ and $seq2 = ACCTGAGACAGTGGCT$}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix}
+	\centering
+	\textbf{What we could conclude from the Dot plot?}	 
+	\begin{figure}[]		
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/alignment/dot_plot3.png}
+		\label{img:uniprot}
+		\caption{Dot matrix example. $seq1 = ACCTGATACAGTGGCT$ and $seq2 = ACCTGATAGATACAGTGGCT$}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix}
+	
+	\begin{figure}[]
+		\centering
 		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/alignment/al3.jpg}
 		\label{img:uniprot}
 		\caption{Dot matrix example}
@@ -582,10 +640,45 @@ dimensional matrix \cite{xiong2006essential}.
 %-------------------------------------------------------
 
 %https://bioinf.comav.upv.es/courses/biotech3/theory/sequence_alignment.html
-%https://varnomen.hgvs.org/recommendations/DNA/variant/inversion/
-%https://omicstutorials.com/interpreting-dot-plot-bioinformatics-with-an-example/
-%https://biology.stackexchange.com/questions/44550/how-to-read-this-dna-inversion-diagram
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Noise in Dot matrix}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/alignment/dot_plot5.jpg}
+		\label{img:uniprot}
+		\caption{Several off-diagonal matches that generally is not meaningfull.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix with window size}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/alignment/dot_plot6.jpg}
+		\label{img:uniprot}
+		\caption{Dot plot with windows successfully reduce the diagonal noise.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Dot matrix with window size}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/alignment/dot_plot7.jpg}
+		\label{img:uniprot}
+		\caption{According to identity threshold, different dot plots are obtained.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
