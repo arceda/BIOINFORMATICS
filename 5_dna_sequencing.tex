@@ -1,108 +1,72 @@
 \documentclass[10pt]{beamer}
-\usetheme[
-%%% option passed to the outer theme
-%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
-  ]{Feather}
-  
-% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
-
-% Change the bar colors:
-%\setbeamercolor{Feather}{fg=red!20,bg=red}
-
-% Change the color of the structural elements:
-%\setbeamercolor{structure}{fg=red}
-
-% Change the frame title text color:
-%\setbeamercolor{frametitle}{fg=blue}
-
-% Change the normal text color background:
-%\setbeamercolor{normal text}{fg=black,bg=gray!10}
-
-%-------------------------------------------------------
-% INCLUDE PACKAGES
-%-------------------------------------------------------
-
-\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
-
-%-------------------------------------------------------
-% DEFFINING AND REDEFINING COMMANDS
-%-------------------------------------------------------
-
-% colored hyperlinks
-\newcommand{\chref}[2]{
-  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
-}
 
 %-------------------------------------------------------
 % INFORMATION IN THE TITLE PAGE
 %-------------------------------------------------------
 
-\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
-{ % is placed on the title page
-      \textbf{Bioinfomatics}
-}
-
-\subtitle[DNA Sequencing]
-{
-      \textbf{DNA Sequencing}
-}
-
-\author[MSc. Vicente Machaca Arceda]
-{      MSc. Vicente Machaca Arceda \\
-      {}
-}
-
-\institute[]
-{
-      \textbf{UNIVERSIDAD NACIONAL DE SAN AGUSTÍN} \\ 
-      Escuela Profesional de Ciencias de la Computación
-  
-  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
-}
-
+\title[]{\textbf{Bioinformatics}} 
+\subtitle[]{DNA sequencing}
+\author[MSc. Vicente Machaca Arceda]{MSc. Vicente Machaca Arceda}
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\institute[]{Universidad Nacional de San Agustín de Arequipa} 
 \date{\today}
+
+%-------------------------------------------------------
+% CHOOSE THE THEME
+%-------------------------------------------------------
+\def\mycmd{0} % CS THEME
+\def\mycmd{1} % MYTHEME
+%-------------------------------------------------------
+
+\if\mycmd1
+\usetheme[]{Feather}
+\newcommand{\chref}[2]{	\href{#1}{{\usebeamercolor[bg]{Feather}#2}} }
+\else
+\usepackage{csformat}
+\fi
+
+\newcommand{\1}{
+	\setbeamertemplate{background}{
+		\includegraphics[width=\paperwidth,height=\paperheight]{img/1}
+		\tikz[overlay] \fill[fill opacity=0.75,fill=white] (0,0) rectangle (-\paperwidth,\paperheight);
+	}
+}
+
+
 
 %-------------------------------------------------------
 % THE BODY OF THE PRESENTATION
 %-------------------------------------------------------
 
 \begin{document}
-
-
-\AtBeginSection[]
-{
-    \begin{frame}
-        \frametitle{Table of Contents}
-        \tableofcontents[currentsection]
-    \end{frame}
-}
-
-
-%-------------------------------------------------------
-% THE TITLEPAGE
-%-------------------------------------------------------
-
-{\1% % this is the name of the PDF file for the background
-\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
-  \titlepage % call the title page information from above
-\end{frame}}
-
-
-{\1% % this is the name of the PDF file for the background
-
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-%\begin{frame}{Genomes by numbers}{}
-%\centering
-%\textbf{GENOMES BY NUMBERS} \\
-%MSc. Vicente Machaca Arceda 
-%\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
+	
+	
+	\AtBeginSection[]
+	{
+		\begin{frame}
+			\frametitle{Table of Contents}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	
+	%-------------------------------------------------------
+	% THE TITLEPAGE
+	%-------------------------------------------------------
+	
+	\if\mycmd1 % MY THEME
+	\1{
+		\begin{frame}[plain,noframenumbering] 
+			\titlepage 
+		\end{frame}}
+		
+		\else % CS THEME
+		\maketitle
+		\fi
 
 %-------------------------------------------------------
 %-------------------------------------------------------
@@ -136,7 +100,7 @@
 \begin{frame}{Objectives}{}
 \begin{itemize}
     \item<1-> Understand what is DNA sequencing. 
-    \item<2-> Learn the different methods of DNA sequencing.
+    \item<2-> Learn the Sanger method for DNA sequencing.
   \end{itemize}
 \end{frame}
 %-------------------------------------------------------
@@ -145,10 +109,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{DNA sequencing}
+\subsection{DNA sequencing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{DNA sequencing}{Definition}
+	
+	\begin{block}{}
+		DNA sequencing is the process of determining the order of nucleotide bases (As, Ts, Cs, and Gs) in a piece of DNA.
+	\end{block}
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger DNA sequencing}{Example}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq1.png}
+		\label{img:mot2}
+		\caption{DNA sequencing in the analysis of mutations}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sanger DNA sequencing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -161,51 +161,123 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger DNA sequencing}{Definition}
+	
+	\begin{block}{}
+		Sanger in 1975 proposed a method for determining sequences in DNA by primed synthesis with DNA polymerase \cite{sanger1996rapid}.
+	\end{block}
+	
+	\begin{block}{}
+		Sanger method is based on the principle of \textbf{Di deoxynucleotide}.
+	\end{block}
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Di deoxynucleotide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{DNA sequencing}{Definition}
-
-\begin{block}{}
-DNA sequencing is the process of determining the order of nucleotide bases (As, Ts, Cs, and Gs) in a piece of DNA.
-\end{block}
-
+\begin{frame}{Sanger method}{Deoxynucleotide}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/dna14.jpg}
+		\label{img:mot2}
+		\caption{The nucleotides are also called deoxynucleotides.}
+	\end{figure}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{DNA sequencing}{Use}
+\begin{frame}{Sanger method}{Deoxynucleotide}
 	\begin{figure}[]
 		\centering
-		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq1.png}
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq2.jpg}
 		\label{img:mot2}
-		\caption{DNA sequencing in the analysis of mutations}
+		\caption{Deoxynucleotides doesn't have the hydroxyl group at the 4' carbon of sugar.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq3.png}
+		\label{img:mot2}
+		\caption{The difference of nucleotides and nucleosides.}
 	\end{figure}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Methods}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{DNA sequencing}{Sanger}
-
-
-
+\begin{frame}{Sanger method}{dNTP}	
+	\begin{block}{dNTP}
+		Deoxynucleoside triphosphate \textbf{dNTPs} are standard natural substrates of all DNA polymerases.
+	\end{block}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq4.jpg}
+		\label{img:mot2}
+		\caption{dNTPs are attached to the 3' carbon of sugar.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq5.jpg}
+		\label{img:mot2}
+		\caption{dNTPs are attached to the 3' carbon of sugar.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq6.jpg}
+		\label{img:mot2}
+		\caption{dNTPs are attached to the 3' carbon of sugar.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+
 
 
 
@@ -225,10 +297,15 @@ DNA sequencing is the process of determining the order of nucleotide bases (As, 
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-{\1
-\begin{frame}[plain,noframenumbering]
-  \finalpage{Thank you}
-\end{frame}}
+\if\mycmd1 % MY THEME
+\1{
+	{\1
+		\begin{frame}[plain,noframenumbering]
+			\finalpage{Thank you}
+		\end{frame}}
+		\else % CS THEME
+		
+\fi
 %-------------------------------------------------------
 %-------------------------------------------------------
 

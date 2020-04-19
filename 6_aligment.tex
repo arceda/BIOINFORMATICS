@@ -1,111 +1,71 @@
 \documentclass[10pt]{beamer}
-\usetheme[
-%%% option passed to the outer theme
-%    progressstyle=fixedCircCnt,   % fixedCircCnt, movingCircCnt (moving is deault)
-  ]{Feather}
-  
-% If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
-
-% Change the bar colors:
-%\setbeamercolor{Feather}{fg=red!20,bg=red}
-
-% Change the color of the structural elements:
-%\setbeamercolor{structure}{fg=red}
-
-% Change the frame title text color:
-%\setbeamercolor{frametitle}{fg=blue}
-
-% Change the normal text color background:
-%\setbeamercolor{normal text}{fg=black,bg=gray!10}
-
-%-------------------------------------------------------
-% INCLUDE PACKAGES
-%-------------------------------------------------------
-
-\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{helvet}
-
-
-%-------------------------------------------------------
-% DEFFINING AND REDEFINING COMMANDS
-%-------------------------------------------------------
-
-% colored hyperlinks
-\newcommand{\chref}[2]{
-  \href{#1}{{\usebeamercolor[bg]{Feather}#2}}
-}
 
 %-------------------------------------------------------
 % INFORMATION IN THE TITLE PAGE
 %-------------------------------------------------------
 
-\title[] % [] is optional - is placed on the bottom of the sidebar on every slide
-{ % is placed on the title page
-      \textbf{Bioinfomatics}
-}
-
-\subtitle[Sequence Alignment]
-{
-      \textbf{Sequence Alignment}
-}
-
-\author[MSc. Vicente Machaca Arceda]
-{      MSc. Vicente Machaca Arceda \\
-      {}
-}
-
-\institute[]
-{
-     % {\large \textbf{UNIVERSIDAD NACIONAL DE SAN AGUSTÍN} \\ 
-     % Escuela Profesional de Ciencias de la Computación}
-     \textbf{UNIVERSIDAD NACIONAL DE SAN AGUSTÍN} \\ 
-     Escuela Profesional de Ciencias de la Computación
-   
-  %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
-}
-
+\title[]{\textbf{Bioinformatics}} 
+\subtitle[]{Sequence alignment}
+\author[MSc. Vicente Machaca Arceda]{MSc. Vicente Machaca Arceda}
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\institute[]{Universidad Nacional de San Agustín de Arequipa} 
 \date{\today}
+
+%-------------------------------------------------------
+% CHOOSE THE THEME
+%-------------------------------------------------------
+\def\mycmd{0} % CS THEME
+\def\mycmd{1} % MYTHEME
+%-------------------------------------------------------
+
+\if\mycmd1
+\usetheme[]{Feather}
+\newcommand{\chref}[2]{	\href{#1}{{\usebeamercolor[bg]{Feather}#2}} }
+\else
+\usepackage{csformat}
+\fi
+
+\newcommand{\1}{
+	\setbeamertemplate{background}{
+		\includegraphics[width=\paperwidth,height=\paperheight]{img/1}
+		\tikz[overlay] \fill[fill opacity=0.75,fill=white] (0,0) rectangle (-\paperwidth,\paperheight);
+	}
+}
+
+
 
 %-------------------------------------------------------
 % THE BODY OF THE PRESENTATION
 %-------------------------------------------------------
 
 \begin{document}
-
-
-\AtBeginSection[]
-{
-    \begin{frame}
-        \frametitle{Table of Contents}
-        \tableofcontents[currentsection]
-    \end{frame}
-}
-
-
-%-------------------------------------------------------
-% THE TITLEPAGE
-%-------------------------------------------------------
-
-{\1% % this is the name of the PDF file for the background
-\begin{frame}[plain,noframenumbering] % the plain option removes the header from the title page, noframenumbering removes the numbering of this frame only
-  \titlepage % call the title page information from above
-\end{frame}}
-
-
-{\1% % this is the name of the PDF file for the background
-
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-%\begin{frame}{Genomes by numbers}{}
-%\centering
-%\textbf{GENOMES BY NUMBERS} \\
-%MSc. Vicente Machaca Arceda 
-%\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
+	
+	
+	\AtBeginSection[]
+	{
+		\begin{frame}
+			\frametitle{Table of Contents}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	
+	%-------------------------------------------------------
+	% THE TITLEPAGE
+	%-------------------------------------------------------
+	
+	\if\mycmd1 % MY THEME
+	\1{
+		\begin{frame}[plain,noframenumbering] 
+			\titlepage 
+		\end{frame}}
+		\else % CS THEME
+		\maketitle
+		\fi
 
 %-------------------------------------------------------
 %-------------------------------------------------------
@@ -809,10 +769,15 @@ There are several online tool to process Dot matrix:
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-{\1
-\begin{frame}[plain,noframenumbering]
-  \finalpage{Thank you}
-\end{frame}}
+\if\mycmd1 % MY THEME
+\1{
+	{\1
+		\begin{frame}[plain,noframenumbering]
+			\finalpage{Thank you}
+		\end{frame}}
+		\else % CS THEME
+		
+\fi
 %-------------------------------------------------------
 %-------------------------------------------------------
 
