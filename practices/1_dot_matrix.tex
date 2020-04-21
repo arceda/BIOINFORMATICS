@@ -16,6 +16,20 @@
 %\rfoot{Página \thepage}
 \rfoot{\thepage}
 
+% Logos in first page
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[C]{\footnotesize Page \thepage\ of \pageref{LastPage}}%
+	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{../img/logo_unsa.jpg}}}
+	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{../img/logo_epcc_unsa.png}}}
+	\fancyhead[C]{  \fontsize{8}{8}\selectfont
+		Universidad Nacional de San Agustín de Arequipa \\  
+		\textbf{Escuela Profesional de Ciencia de la Computación} \\ 
+		Curso: Computación Molecular Biológica 
+		}
+}
+
 
 % para el codigo fuente
 \usepackage{listings}
@@ -54,19 +68,29 @@
 \parbox[b][\paperheight]{\paperwidth}{%
 \vfill
 \centering
-\includegraphics[width=\paperwidth,height=\paperheight]{img/background4.png}%
+\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
 \vfill
 }}}
 
 
-\title{\textbf{GUIA DE LABORATORIO 1}}
+\title{\textbf{Práctica 1}}
 \author{MSc. Vicente Machaca Arceda}
 \date{\today}
 
+	
 
 \begin{document}
-\AddToShipoutPicture{\BackgroundPic}
+	
+% image background
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%\AddToShipoutPicture{\BackgroundPic}
 %\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+
+
 \maketitle
 
 \begin{table}[h]
@@ -140,7 +164,7 @@ El método Dot matrix, es un algoritmo gráfico de alineamiento de secuencias, e
 
 \begin{figure}[h]
  \centering
-    \includegraphics[width=\textwidth,height=0.2\textheight,keepaspectratio]{img/alignment/dot.jpg}
+    \includegraphics[width=\textwidth,height=0.2\textheight,keepaspectratio]{../img/alignment/dot.jpg}
     \caption{Dot matrix de dos secuencias de ADN. Los puntos representan las coincidencias de cada nucleotido y las lineas agrupan estas coincidencias.}
     \label{img:dot}
 \end{figure}
@@ -155,7 +179,7 @@ En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el 
     
     \begin{figure}[h]
      \centering
-        \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{img/alignment/uniprot2.jpg}
+        \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{../img/alignment/uniprot2.jpg}
         \caption{Busqueda de la secuencia de la proteina Filamin-A de la especie Homo sapiens.}
          \label{img:uniprot2}
     \end{figure}
@@ -165,7 +189,7 @@ En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el 
     
     \begin{figure}[h]
      \centering
-        \includegraphics[width=\textwidth,height=0.2\textheight,keepaspectratio]{img/alignment/uniprot4.jpg}
+        \includegraphics[width=\textwidth,height=0.2\textheight,keepaspectratio]{../img/alignment/uniprot4.jpg}
         \caption{Botón de descarga del archivo FASTA de la secuencia.}
         \label{img:uniprot4}
     \end{figure}
@@ -174,7 +198,7 @@ En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el 
     
     \begin{figure}[h]
      \centering
-        \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{img/alignment/uniprot5.jpg}
+        \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{../img/alignment/uniprot5.jpg}
         \caption{Busqueda de la secuencia de la proteina Filamin-A de la especie mus musculus.}
         \label{img:uniprot5}
     \end{figure}
@@ -183,7 +207,7 @@ En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el 
     
     \begin{figure}[h]
      \centering
-        \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{img/alignment/dot2.jpg}
+        \includegraphics[width=\textwidth,height=0.4\textheight,keepaspectratio]{../img/alignment/dot2.jpg}
         \caption{Dot matrix de las secuencias Q8BTM8 y P21333.}
         \label{img:dot2}
     \end{figure}
