@@ -25,7 +25,7 @@
 % CHOOSE THE THEME
 %-------------------------------------------------------
 \def\mycmd{0} % CS THEME
-\def\mycmd{1} % MYTHEME
+%\def\mycmd{1} % MYTHEME
 %-------------------------------------------------------
 
 \if\mycmd1
@@ -51,11 +51,11 @@
 \begin{document}
 	
 	
-	\AtBeginSection[]
+	\AtBeginSubsection[]
 	{
 		\begin{frame}
 			\frametitle{Table of Contents}
-			\tableofcontents[currentsection]
+			\tableofcontents[currentsubsection]
 		\end{frame}
 	}
 	
@@ -171,14 +171,22 @@
 %-------------------------------------------------------
 \begin{frame}{Sanger DNA sequencing}{Definition}
 	
-	\begin{block}{}
-		Sanger in 1975 proposed a method for determining sequences in DNA by primed synthesis with DNA polymerase \cite{sanger1996rapid}.
-	\end{block}
-	
-	\begin{block}{}
-		Sanger method is based on the principle of \textbf{Di deoxynucleotide}.
-	\end{block}
-	
+		\begin{columns}
+			\begin{column}{0.48\textwidth}
+				\begin{block}{}
+					Sanger (1975) proposed a method for determining sequences in DNA by primed synthesis with DNA polymerase \cite{sanger1977dna}. \\ 
+					It is based on the principle of \textbf{Di deoxynucleotide}.
+				\end{block} 
+			\end{column}
+			\begin{column}{0.48\textwidth}
+				\begin{figure}[]
+					\centering
+					\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/sequencing/sanger.jpg}
+					\label{img:mot2}
+					\caption{Frederick Sanger in 1977.}
+				\end{figure}
+			\end{column}
+		\end{columns}	
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
@@ -207,12 +215,26 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
+\begin{frame}{Sanger method}{dNTP}	
+	\begin{block}{dNTP}
+		Deoxynucleoside triphosphate \textbf{dNTPs} are standard natural substrates of all DNA polymerases.
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
 \begin{frame}{Sanger method}{Deoxynucleotide}
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq2.jpg}
 		\label{img:mot2}
-		\caption{Deoxynucleotides doesn't have the hydroxyl group at the 4' carbon of sugar.}
+		\caption{Deoxynucleotides doesn't have the hydroxyl group at the 2' carbon of sugar.}
 	\end{figure}
 \end{frame}
 %-------------------------------------------------------
@@ -231,20 +253,23 @@
 %-------------------------------------------------------
 %-------------------------------------------------------
 
-
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Sanger method}{dNTP}	
-	\begin{block}{dNTP}
-		Deoxynucleoside triphosphate \textbf{dNTPs} are standard natural substrates of all DNA polymerases.
-	\end{block}
+\begin{frame}{Sanger method}{Deoxynucleotide}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq10.png}
+		\label{img:mot2}
+		\caption{Deoxynucleotides: dATP, dTTP, dCTP and dGTP.}
+	\end{figure}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+\begin{frame}{Sanger method}{DNA replication - Di Deoxynucletide principle}
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq4.jpg}
@@ -257,7 +282,7 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+\begin{frame}{Sanger method}{DNA replication - Di Deoxynucletide principle}
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq5.jpg}
@@ -270,7 +295,7 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Sanger method}{Nucleotides and nucleosides}
+\begin{frame}{Sanger method}{DNA replication - Di Deoxynucletide principle}
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq6.jpg}
@@ -282,12 +307,226 @@
 %-------------------------------------------------------
 
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication - Di Deoxynucletide principle}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq7.jpg}
+		\label{img:mot2}
+		\caption{If 3' OH group is absent, the reaction stop.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication - Di Deoxynucletide principle}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/sequencing/seq8.jpg}
+		\label{img:mot2}
+		\caption{If 3' OH group is absent, the reaction stop.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Deoxynucleotide}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq9.png}
+		\label{img:mot2}
+		\caption{Deoxynucleotide and Di Deoxynucletide.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sanger Method}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Double helix DNA}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq11.jpg}
+		\label{img:mot2}
+		\caption{The Sanger method start from a double helix DNA.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Single strand DNA}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq12.jpg}
+		\label{img:mot2}
+		\caption{The double helix DNA is separated with high temperatures.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Primer - dNTPs - DNA Polymerase}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq13.jpg}
+		\label{img:mot2}
+		\caption{Three components are prepared in vitro. dNTPs, DNA Polymerase and a Primer.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Fluorophore labeled deoxynucleotide}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq21.jpg}
+		\label{img:mot2}
+		\caption{The ddNTPs are fluorophore labeled.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Primer - dNTPs - DNA Polymerase}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq14.jpg}
+		\label{img:mot2}
+		\caption{Four tubes are used. Each tube contains: DNA template, primer, dNTPs, DNA polymerase and one type of ddNTP (ATP or TTP or CTP or GTP).}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication in each tube}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq15.jpg}
+		\label{img:mot2}
+		\caption{DNA replication occurs in each tube. The tubes contains the dNTPs.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication stop when ddNTP arrives}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq16.jpg}
+		\label{img:mot2}
+		\caption{DNA replication stop when a ddNTP arrives.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication starts again}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq17.jpg}
+		\label{img:mot2}
+		\caption{DNA replication starts again and different fragments length are obtained.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{DNA replication starts again}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/sequencing/seq18.jpg}
+		\label{img:mot2}
+		\caption{DNA replication starts again and different fragments are obtained.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Each tube have fragments of DNA}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/sequencing/seq19.jpg}
+		\label{img:mot2}
+		\caption{On each tube, there are DNA fragments, each one with different length.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Each tube have fragments of DNA}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/sequencing/seq20.jpg}
+		\label{img:mot2}
+		\caption{The fragment are charged and they move over a conductor. Smaller flows rapidly and they are read by a laser.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Many samples read}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{img/sequencing/seq22.jpg}
+		\label{img:mot2}
+		\caption{The process is repeated several times and many samples are obtained.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sanger method}{Capillary Electrophoresis Animation}
+	\begin{block}{}
+		\href{https://www.youtube.com/watch?v=wdS3j0TgbjM&list=PLgM5s3vRHCgejiz7lKLR318mXs0ox4NFC&index=6&t=0s}{Capillary Electrophoresis Animation.}
+		
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 
 %-------------------------------------------------------
