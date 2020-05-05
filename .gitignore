@@ -4,7 +4,6 @@
 1_introduction.log
 1_introduction.nav
 1_introduction.out
-1_introduction.pdf
 1_introduction.snm
 1_introduction.synctex.gz
 1_introduction.toc
@@ -14,7 +13,6 @@
 2_biology_cell.blg
 2_biology_cell.log
 2_biology_cell.out
-2_biology_cell.pdf
 2_biology_cell.snm
 2_biology_cell.synctex.gz
 4_dna_structure_replication.log
@@ -25,7 +23,6 @@
 3_numbers.log
 3_numbers.nav
 3_numbers.out
-3_numbers.pdf
 3_numbers.snm
 3_numbers.synctex.gz
 3_numbers.toc
@@ -34,7 +31,6 @@
 4_dna_structure_replication.blg
 4_dna_structure_replication.nav
 4_dna_structure_replication.out
-4_dna_structure_replication.pdf
 4_dna_structure_replication.snm
 4_dna_structure_replication.synctex.gz
 5_dna_sequencing.blg
@@ -44,22 +40,18 @@
 5_dna_sequencing.log
 5_dna_sequencing.nav
 5_dna_sequencing.out
-5_dna_sequencing.pdf
 5_dna_sequencing.snm
 5_dna_sequencing.synctex.gz
 5_dna_sequencing.toc
 practices/1_dot_matrix.log
 practices/1_dot_matrix.aux
 practices/1_dot_matrix.out
-practices/1_dot_matrix.pdf
 practices/1_dot_matrix.synctex.gz
 practices/1_sequencing.log
 practices/1_sequencing.aux
 practices/1_sequencing.out
-practices/1_sequencing.pdf
 practices/1_sequencing.synctex.gz
 practices/2_sequencing.out
 practices/2_sequencing.aux
 practices/2_sequencing.log
-practices/2_sequencing.pdf
 practices/2_sequencing.synctex.gz
