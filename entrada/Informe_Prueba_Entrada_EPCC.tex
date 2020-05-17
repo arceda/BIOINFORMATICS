@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.4 (26/09/2018)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Compiling this template:
+% This template uses biber for its bibliography and makeindex for its index.
+% When you first open the template, compile it from the command line with the 
+% commands below to make sure your LaTeX distribution is configured correctly:
+%
+% 1) pdflatex main
+% 2) makeindex main.idx -s StyleInd.ist
+% 3) biber main
+% 4) pdflatex main x 2
+%
+% After this, when you wish to update the bibliography/index use the appropriate
+% command above and make sure to compile with pdflatex several times 
+% afterwards to propagate your changes to the document.
+%
+% This template also uses a number of packages which may need to be
+% updated to the newest versions for the template to compile. It is strongly
+% recommended you update your LaTeX distribution if you have any
+% compilation errors.        
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\input{texs/structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+%\hypersetup{pdftitle={Title},pdfauthor={Author}} % Uncomment and fill out to include PDF metadata for the author and title of the book
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\setcounter{chapter}{1}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{background_unsa.pdf}};
+\draw (current page.center) node [xshift=3cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth - 8cm}
+{\centering Universidad Nacional de San Agustín de Arequipa\\[20pt] % School
+{\huge Escuela Profesional de Ciencia de la Computación}\\[20pt] % School
+{\huge Computación molecular Biológica}\\[20pt] % Course
+{\huge Informe Prueba de Entrada}\\[20pt] % Course
+{\Large Semestre 2020A}}}; % Semester
+\end{tikzpicture}
+\vfill
+\endgroup
+
+\let\cleardoublepage\clearpage
+
+\newpage
+\includepdf[pages={1-}]{imgs/exam.pdf}
+\includepdf[pages={1-}]{imgs/sol.pdf}
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+\section{Desarrollo de la Prueba de Entrada}
+La prueba de entrada ha sido desarrollado por todos los docentes del curso:
+\begin{enumerate}
+\item Prof(a). Vicente Machaca Arceda
+\end{enumerate}
+
+
+\section{Contenido de la Prueba de Entrada}
+En esta prueba se ha tenido en cuenta los conocimiento previos que el alumno debe tener al inicio del curso. De esta manera ha sido dividida en secciones las cuales fueron representadas por las preguntas de la prueba de entrada. Las siguiente tabla muestra las secciones y las preguntas de cada sección consideradas en la prueba de entrada.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c}
+\hline
+\textbf{Secciones} & 
+\textbf{Preguntas} 
+\\ \hline
+S1. Biología &
+P1 (4 puntos), P2 (4 puntos), P3 (4 puntos) y P4 (4 puntos)
+\\ \hline
+S2. Programación &
+P5 (4 puntos)
+\\ \hline
+\end{tabular}
+\caption{Secciones y Preguntas de la Prueba de Entrada}
+\label{tab:seccpruebaentrada}
+\end{table}
+%------------------------------------------------
+
+\section{Estadísticas de la Prueba de Entrada}
+Rindieron la Prueba de Entrada 16 estudiantes de los 17 estudiantes matriculados, lo que representa un 94\% que se muestra la Figura~\ref{fig:prueba_entrada}.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\pie [rotate = 180, 
+	color={yellow,orange}]
+    {94/Rindieron,
+     6/No Rindieron}
+\end{tikzpicture}
+\caption{Alumnos que Rindieron y No Rindieron la Prueba de Entrada}
+\label{fig:prueba_entrada}
+\end{figure}
+
+En la Tabla~\ref{tab:notas} de se muestra el puntaje obtenido por cada pregunta, sección, nota final y evidencia de cada prueba realizada por los alumnos.
+
+\newpage
+
+\begin{table}[]
+	\caption{Notas y evidencias del examen de entrada}
+	\label{tab:notas}
+	\begin{tabular}{llllllll}
+		\textbf{Apellidos y Nombres}        & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{NOTA} & \textbf{EVIDENCIA} \\
+		\hline
+		ARCOS/PONCE, SERGIO MANUEL          & 3           & 3           & 4           & 0           & 4           & 14            & link               \\
+		BERMUDEZ/NAVARRO, WILLIAN    & 3           & 3           & 4           & 2           & 4           & 16            & link               \\
+		CAYLLAHUE/CCORA, RENZO AUGUSTO      & 3           & 3           & 4           & 2           & 0           & 12            & link               \\
+		CHAMBI APAZA, SYOMIRA INES          & 0           & 3           & 3           & 2           & 4           & 12            & link               \\
+		CHAVEZ LOPEZ CAROLINA BONNIE        & 2           & 4           & 3           & 2           & 0           & 11            & link               \\
+		CONDORI/MANSILLA, WILLIAM   & 2           & 2           & 0           & 2           & 4           & 10            & link               \\
+		DEXTRE/AIQUIPA, MARKS CRISTOPHER    &             &             &             &             &             & 0             & link               \\
+		DIAZ/VENTURA, CELSO EFRAIN NOEL     & 1           & 2           & 2           & 0           & 0           & 5             & link               \\
+		GUARDIA/ZENTENO, IGOR ALFRED        & 1           & 3           & 3           & 0           & 4           & 11            & link               \\
+		HUAYPUNA/HUANCA, JOHANN FRANZ       & 2           & 3           & 3           & 0           & 4           & 12            & link               \\
+		LEON/PAREDES, GUSTAVO MARTIN        & 4           & 4           & 4           & 0           & 0           & 12            & link               \\
+		SONCCO/LUPA, JEAN CARLOS            & 2           & 3           & 3           & 3           & 0           & 11            & link               \\
+		TAMO/TURPO, ERIKA JUDITH            & 2           & 3           & 3           & 0           & 4           & 12            & link               \\
+		TORRES/LIMA, JOSE MANUEL            & 2           & 2           & 2           & 0           & 4           & 10            & link               \\
+		VILLANUEVA/SANCHEZ, FERNANDO & 3           & 3           & 3           & 2           & 0           & 11            & link               \\
+		VISA/FLORES, ALBERTO                & 2           & 3           & 0           & 3           & 4           & 12            & link      \\
+		\hline        
+	\end{tabular}
+\end{table}
+
+\newpage
+
+Del total de 272 puntos posibles para la sección 1, los alumnos obtuvieron 135 puntos, lo que representa el 30\%.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\pie [rotate = 180, 
+	color={yellow,orange}]
+    {50/Puntos Obtenidos Sección 1,
+     50/Puntos No Obtenidos Sección 1}
+\end{tikzpicture}
+\caption{Puntos Obtenidos y No Obtenidos en la Sección 1}
+\end{figure}
+
+Del total de 68 puntos para la sección 2 los alumnos obtuvieron 36 puntos, lo que representa el 30\%.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0]
+\pie [rotate = 180, 
+	color={yellow,orange}]
+    {53/Puntos Obtenidos Sección 2,
+     47/Puntos No Obtenidos Sección 2}
+\end{tikzpicture}
+\caption{Puntos Obtenidos y No Obtenidos en la Sección 2}
+\end{figure}
+
+La nota promedio de los estudiantes que rindieron la Prueba de Entrada es de \textbf{11 puntos}. Esto se debe a sus pocos conocimientos de biología (Sección 1). Debido a esto se determino dedicar mas tiempo a la unidad 1 del Silabo, la cúal brinda conceptos básicos de biología molecular.
+
+
+\end{document}
