@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{}
+\newcommand{\cstema}{Operador exponencial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\cscurso}
+\lhead{\csdocente}
+\rfoot{Página \thepage}
+
+% Logos in first page
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[C]{\footnotesize Página \thepage\ }%
+	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
+	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
+	\fancyhead[C]{  \fontsize{8}{8}\selectfont
+		\csuniversidad \\  
+		\textbf{\csescuela} \\ 
+		Curso: \cscurso 
+	}
+	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
+	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+	
+}
+\headheight 40pt              %% put this outside
+\headsep 10pt 
+
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage[spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para la imagen de fondo
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
+\vfill
+}}}
+
+
+\title{\textbf{Primer examen parcial - Solución}}
+\author{\csdocente}
+\date{\today}
+
+	
+
+\begin{document}
+	
+% image background
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%\AddToShipoutPicture{\BackgroundPic}
+%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+
+
+\maketitle
+
+\begin{table}[h]
+	\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\hline 
+		\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+		\hline 
+		\csdocente & \csescuela & \cscurso    \\
+		\hline 
+	\end{tabular}
+\end{table}
+
+%\begin{table}[h]
+%	\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+%		\hline 
+%		\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+%		\hline 
+%		\cspracnr & \cstema & 3 horas   \\
+%		\hline 
+%	\end{tabular}
+%\end{table}
+
+
+
+
+\section{Preguntas}
+
+\begin{enumerate}
+	\item ¿En que lugar de las celulas, NO esta presente el DNA?\\
+	Nucleo, mitocondrías y cloroplasto.
+	\item  ¿Cuáles son las bases nitrogenadas presentes en el RNA?\\
+	Adenine (A), uracil (U), guanine (G), and cytosine (C)
+	\item ¿Cuáles son las bases nitrogenadas presentes en el DNA?\\
+	Adenine (A), guanine (G), thymine (T), and cytosine (C)
+	\item What is bioinformatics?\\
+	Bioinformatics involves the technology that uses computers for storage, retrieval, manipulation, and distribution of information related to biological macromolecules such as DNA, RNA, and proteins. Is limited to sequence, structural, and functional analysis of genes and its products. It is the same as Computational molecular biology
+	\item ¿Qué carbono del azucar ribosa es utilizado para la unión de los nucleotidos durante la replicación de DNA?\\
+	Carbono 3
+	\item ¿Qué son los "codons" durante la transcripción? \\
+	Son conjuntos de 3 nucleotidos y son utilizados para sintetizar aminoacidos en los ribosomas
+	\item ¿Qué es un dNTP? \\
+	Es el nucleotido de DNA sin  grupo hidroxyl en el carbono 2 de su ribosa. Es el sustrato utilizado por DNA polymerasa durante la replicación de DNA. Significa: deoxy Nucleoside triphosphate
+	\item ¿Qué es un ddNTP? \\
+	Es el nucleotido de DNA sin  grupo hidroxyl en el carbono 3 de su ribosa. Significa: dideoxy Nucleoside triphosphate
+	\item ¿Cuáles son correctas respecto a  gel electrophoresis y capillar electrophoresis?\\
+	Capillar electrophoresis utiliza unos tubos por donde pasan los fragmentos y son captados con un laser. Gel electrophoresis utiliza una lamina de rayos X para leer los fragmentos
+	\item ¿Cuál es la carácteristica del cDNA durante RNA sequencing?\\
+	Es un DNA sin intrones
+	
+\end{enumerate}
+
+%\clearpage
+%\bibliographystyle{ieeetr}
+%\bibliography{../bibliography}
+
+\end{document}

@@ -1,0 +1,433 @@
+\documentclass[10pt]{beamer}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\newcommand{\cstitle}{\textbf{Bioinformatics}}
+\subtitle[]{Sequence alignment - Dinamic programming}
+\newcommand{\cscourseCode}{1005155}
+\newcommand{\csauthor}{MSc. Vicente Machaca Arceda}
+\institute[UNSA]{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\instituteabr}{UNSA}
+\newcommand{\nameUp}{ICC Fase 1}
+\date{\today}
+\title[\cscourseCode]{\cstitle}
+\author{\csauthor}
+%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+% CHOOSE THE THEME
+%-------------------------------------------------------
+\def\mycmd{0} % CS THEME
+%\def\mycmd{1} % MYTHEME
+%-------------------------------------------------------
+
+
+\if\mycmd1
+\usetheme[]{Feather}
+\newcommand{\chref}[2]{	\href{#1}{{\usebeamercolor[bg]{Feather}#2}} }
+\else
+\usepackage{csformat}
+\fi
+
+\newcommand{\1}{
+	\setbeamertemplate{background}{
+		\includegraphics[width=\paperwidth,height=\paperheight]{img/1}
+		\tikz[overlay] \fill[fill opacity=0.75,fill=white] (0,0) rectangle (-\paperwidth,\paperheight);
+	}
+}
+
+
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+	
+	
+	\AtBeginSection[]
+	{
+		\begin{frame}
+			\frametitle{Table of Contents}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	
+	%-------------------------------------------------------
+	% THE TITLEPAGE
+	%-------------------------------------------------------
+	
+	\if\mycmd1 % MY THEME
+	\1{
+		\begin{frame}[plain,noframenumbering] 
+			\titlepage 
+		\end{frame}}
+		\else % CS THEME
+		\maketitle
+		\fi
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Objectives}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Introduction}{Objectives}
+\begin{itemize}
+    \item<1-> Understand the importance of sequence alignment in Bioinformatics. 
+    \item<2-> Understand and implement the Needleman–Wunsch algorithm.
+  \end{itemize}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sequence alignment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Definition}
+
+\begin{block}{}
+\centering
+\textbf{How can we determine the similarity between two sequences?}
+\end{block}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Definition}
+	
+	\begin{block}{Sequence Alignment in Biology}
+		\centering
+		The purpose of a sequence alignment is to line
+		up all residues in the inputted sequence(s) for
+		maximal level of similarity, in the sense of their
+		functional or evolutionary relationship.
+	\end{block}
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Pairwise sequence alignment}	
+	Visit \href{https://www.ebi.ac.uk/Tools/psa/emboss_needle/}{\color{blue}{\underline{EMBOSS}}}, use the sample  sequences and evaluate with BLOSUM62 matrix (no more that 62\% of similarity).
+	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/alignment/dp_1}
+		\label{img:uniprot}
+		\caption{Tool for pairwise sequence alignment.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Sequence alignment}{Pairwise sequence alignment}		
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/alignment/dp_2}
+		\label{img:uniprot}
+		\caption{Alignment: ``|'' stands for equality, ``:'' for similarity and ``.'' for non-similarity.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Maths}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Pairwise Sequence Alignment}{in Maths}		
+	\begin{block}{}
+	Input data:
+			\begin{itemize}
+				\item Two sequences $S_1$ and $S_2$
+			\end{itemize}
+	\end{block}
+
+	\begin{block}{}
+		Parameters:
+			\begin{itemize}
+				\item A scoring function $f$ for \textbf{substitutions} and \textbf{gaps}.
+			\end{itemize}
+	\end{block}
+
+ 	\begin{block}{}
+ 		Output:
+			\begin{itemize}
+				\item The optimal alignment of $S_1$ and $S_2$, which has the maximal
+				score.
+			\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Pairwise Sequence Alignment}{in Maths}
+	There are too many possible solution for sequence alignment.		
+	\begin{figure}[]
+	\centering
+		\includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{img/alignment/dp_3}
+		\label{img:uniprot}
+		%\caption{Alignment: ``|'' stands for equality, ``:'' for similarity and ``.'' for non-similarity.}
+	\end{figure}
+
+	\[
+		\binom{2n}{n} = \frac{ (2n)! }{(n!)^2}
+	\]
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Pairwise Sequence Alignment}{in Maths}	
+	if $n=300$
+	\[
+	\binom{2n}{n} = \frac{ (2n)! }{(n!)^2} = \frac{ 2*300 }{(300!)^2}  \approx 7*10^{88}
+	\]
+	
+	The visible universe is estimated to contain $10^{78} \sim 10^{80}$ atoms.
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Pairwise Sequence Alignment}{Dynamic Programming}	
+	\begin{block}{Dynamic Programming}
+		Dynamic Programming solves problems by combining the solutions to sub‐problems.
+		\begin{itemize}
+			\item Break the problem into smaller sub‐problems.
+			\item Solve these sub‐problems optimally recursively.
+			\item Use these optimal solutions to construct an optimal solution for the original problem.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}		
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/alignment/dp_5}
+		\label{img:uniprot}
+		\caption{How we could divide the problem into sub-problems.}
+	\end{figure}	
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}		
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/alignment/dp_4}
+		\label{img:uniprot}
+		%\caption{How we could divide the problem into sub-problems.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}			
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/alignment/dp_6}
+		\label{img:uniprot}
+		\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/alignment/dp_7}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=1.05\textwidth,keepaspectratio]{img/alignment/dp_8}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=1.05\textwidth,keepaspectratio]{img/alignment/dp_9}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=1.05\textwidth,keepaspectratio]{img/alignment/dp_10}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=1.05\textwidth,keepaspectratio]{img/alignment/dp_11}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Dynamic Programming}{Example}	
+	Trace back to the upper left. Each arrow introduces
+	one symbol at the end of each aligned sequence.
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=1.05\textwidth,keepaspectratio]{img/alignment/dp_12}
+		\label{img:uniprot}
+		%\caption{Example of $s(x_i, y_i)$.}
+	\end{figure}	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\if\mycmd1 % MY THEME
+\1{
+	{\1
+		\begin{frame}[plain,noframenumbering]
+			%\finalpage{Thank you}
+			\begin{figure}[]
+				\centering
+				\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/question.png}
+				%\label{img:mot2}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+	\end{frame}}
+	\else % CS THEME
+	\begin{frame}{Questions?}
+		\begin{figure}[]
+			\centering
+			\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/question.png}
+			%\label{img:mot2}
+			%\caption{Image example in 2 gray levels.}
+		\end{figure}
+		
+	\end{frame}
+	\fi
+	%-------------------------------------------------------
+	%-------------------------------------------------------
+
+
+
+\end{document}
