@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{04}
+\newcommand{\cstema}{Lecturas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\cscurso}
+\lhead{\csdocente}
+\rfoot{Página \thepage}
+
+% Logos in first page
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[C]{\footnotesize Página \thepage\ }%
+	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
+	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
+	\fancyhead[C]{  \fontsize{8}{8}\selectfont
+		\csuniversidad \\  
+		\textbf{\csescuela} \\ 
+		Curso: \cscurso 
+	}
+	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
+	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+	
+}
+\headheight 40pt              %% put this outside
+\headsep 10pt 
+
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\usepackage[english,spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para la imagen de fondo
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
+			\vfill
+		}}}
+		
+		
+		\title{\textbf{Práctica \cspracnr}}
+		\author{\csdocente}
+		\date{\today}
+		
+		
+		
+\begin{document}
+	
+	% image background
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%\AddToShipoutPicture{\BackgroundPic}
+	%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+	
+	
+	\maketitle
+	
+	\begin{table}[h]
+		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+			\hline 
+			\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+			\hline 
+			\csdocente & \csescuela & \cscurso    \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[h]
+		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+			\hline 
+			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+			\hline 
+			\cspracnr & \cstema & 3 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	
+	\section{Competencias del curso}
+	\begin{itemize}
+		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de Bioinformática.
+		\item Analiza, diseña y propone soluciones frente a problemas bioinformáticos.
+		\item Sabe cómo utilizar y conoce las bases computacionales de herramientas modernas de secuenciamiento,
+		alineamiento, árboles filogenéticos y mapeo de genomas.
+	\end{itemize}
+	
+	
+	\section{Competencias de la práctica}
+	\begin{itemize}
+		\item Comprender algunos tópicos en mutaciones, historia de la bioinformática y \textit{Virology}.
+	\end{itemize}
+	
+	\section{Equipos y materiales}
+	\begin{itemize}
+		\item Latex
+		\item Conección a internet 
+		%\item Python
+		%\item Matplotlib 
+		%\item Numpy 
+		%\item BioPython
+		%\item Cuenta en Github
+	\end{itemize}
+	
+	\section{Entregables}
+	\begin{itemize}
+		\item Se debe elaborar un informe donde se explique cada tema asignado.
+		\item Exposición de cada tema, cada exposición no debe durar mas de 10 min.
+		%\item Se debe elaborar un informe en Latex donde se responda a cada ejercicio de la Sección \ref{sec:ejercicios}.
+		%\item En el informe se debe agregar un enlace al repositorio Github donde esta el código.
+		%\item En el informe se debe agregar el código fuente asi como capturas de pantalla de la ejecución y resultados del mismo.
+	\end{itemize}
+	
+	
+	
+	
+	\clearpage
+	
+	
+	%\section{Ejercicios}\label{sec:ejercicios}
+	\section{Temas}\label{sec:ejercicios}
+	
+	A continuación se presentan los temas, cada grupo escogerá un tema y revisará el material de ayuda como mínimo.
+	
+	\begin{enumerate}
+		\item Historia de la Bioinformática. Se debe explicar cada hito inmportante de la Bioinformática, sustentar cada evento con las publicaciones en revistas cientificas. Material de ayuda:
+			\begin{itemize}
+				\item \href{https://www.coursera.org/learn/bioinformatics-pku/lecture/0i4EF/history-of-bioinformatics}{Video}
+				\item \href{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000809}{The Roots of Bioinformatics}
+			\end{itemize}
+		\item Mutaciones. Material de ayuda:
+			\begin{itemize}
+				\item \href{https://www.nature.com/scitable/topicpage/dna-replication-and-causes-of-mutation-409/}{DNA Replication and Causes of Mutation}
+				\item \href{https://www.nature.com/scitable/topicpage/genetic-mutation-441/}{Genetic Mutation}
+				\item \href{https://www.ncbi.nlm.nih.gov/books/NBK21578/}{Mutations: Types and Causes}
+			\end{itemize}
+		
+		\item Replicación de virus. Material de ayuda:
+		\begin{itemize}
+			\item \href{https://reader.elsevier.com/reader/sd/pii/B9780123751560000047?token=9B13E6DC096F4D4A969692D3BE8C9F7F7A9EB515D7CEC08023BB74B04F1BDD0C115766A9665D276C5990CAA8124564E6}{Virus Replication}
+			\item \href{https://courses.lumenlearning.com/boundless-microbiology/chapter/dna-viruses-in-eukaryotes/}{DNA Viruses in Eukaryotes}
+			
+		\end{itemize}
+	
+		\item COVID-19. Material de ayuda:
+		\begin{itemize}
+			\item \href{https://drive.google.com/file/d/19nQoOZv8gpxrDPQtlZHTMKygRZD2f15s/view?usp=sharing}{The Human Coronavirus Disease COVID-19}
+			\item \href{https://www.asm.org/COVID/COVID-19-Research-Registry/Basic-Virology}{COVID-19 Research regestry}
+			
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	
+	%\clearpage
+	%\bibliographystyle{ieeetr}
+	%\bibliography{../bibliography}
+	
+\end{document}
