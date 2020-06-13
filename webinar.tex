@@ -210,7 +210,7 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{The purpose of Bioinformatics}{Protein simulation}
+\begin{frame}{The purpose of Bioinformatics}{Protein structure prediction}
 	\begin{figure}[]
 		\centering
 		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/webinar/protein2}
@@ -239,7 +239,6 @@
 %-------------------------------------------------------
 
 
-
 %-------------------------------------------------------
 %-------------------------------------------------------
 \begin{frame}{Bioinformatics}
@@ -252,7 +251,6 @@
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
-
 
 %-------------------------------------------------------
 %-------------------------------------------------------
@@ -268,6 +266,76 @@
 %-------------------------------------------------------
 
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Bioinformatics}{Concepts}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{img/introduction/bio4.jpg}
+		\label{img:mot2}
+		\caption{Where DNA is located \cite{dna2020located}.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Bioinformatics}{Concepts}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/introduction/bio7.jpg}
+		\label{img:mot2}
+		\caption{DNA structure \cite{dnastructure2020}.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Bioinformatics}{Concepts}
+	
+	\begin{block}{}
+		\centering
+		The human genome is made of \textbf{\string ~3.2 billions bp} of DNA. \\
+		\string ~6.4 billions of nucleotides \cite{archibald2018genomics}.
+	\end{block}
+
+	\pause
+	\begin{block}{}
+		\centering
+		The HIV-1 genome is made of \textbf{\string ~20k bp} of DNA. \\
+		Meanwhile, the COVID-19 is made of \textbf{\string ~32k bp} \cite{randhawa2020machine}.
+	\end{block}
+
+	\pause
+	\begin{block}{}
+		\centering
+		There are approximately \textbf{19000} to \textbf{25000} genes. \\
+		No one knows for sure \cite{archibald2018genomics}.
+	\end{block}
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Bioinformatics}{Concepts}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/numbers/alt.jpg}
+		\label{img:mot2}
+		\caption{Alternative splicing \cite{genbio2020}.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Bioinformatics against COVID-19}
@@ -276,78 +344,248 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Pre-requisites}
+%\subsection{COVID-19}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Pre-requisites}{}
+%\begin{frame}{COVID-19}
+%	\begin{figure}[]
+%		\centering
+%		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/covid_origin}
+%		\label{img:mot2}
+%		\caption{Graphical origin of COVID-19. Source: \cite{shereen2020covid}}
+%	\end{figure}
+%\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Protein structure prediction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{Definition}
+	\begin{block}{Definition}
+		The prediction of protein three-dimensional structure from amino acid sequence \cite{kuhlman2019advances}.
+	\end{block}
+
+	\pause
+	\begin{block}{Methods}
+		\begin{itemize}
+			\item X-ray crystallography.
+			\item Nuclear magnetic resonance.
+			\item Cryo-electron microscopy.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{Using computers}
 	\begin{block}{}
+		There are two aproaches to predicting protein structures:
 		\begin{itemize}
-			\item Programming skills. \pause
-			\item Advance data structure knowledge. \pause
-			\item Machine learning (Neural networks, SVM, and Deep learning). \pause
-			\item Molecular biology knowledge. 
+			\item Homology modeling.
+			\item Physical modeling.
 		\end{itemize}
+	\end{block}
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{Proteins in COVID-19}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/webinar/covid}
+		\label{img:mot2}
+		\caption{Graphical view of COVID-19 structure. Source: \cite{Goodsell2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{Proteins in COVID-19}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.5\textwidth,keepaspectratio]{img/webinar/covid2}
+		\label{img:mot2}
+		\caption{Membrane S (spike) protein, M (membrane) protein, membrane channel E (envelope) protein and the N (nucleocapsid) protein bound to the genomic RNA. Source: \cite{Goodsell2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{AlphaFold method}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/protein_prediction}
+		\label{img:mot2}
+		\caption{Protein structure prediction method proposed by AlphaFold. Source: \cite{alphafold2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{COVID-19 membrane protein}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.7\textwidth,keepaspectratio]{img/webinar/covid3}
+		\label{img:mot2}
+		\caption{COVID-19 membrane protein. Source: \cite{alphafold2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Protein structure prediction}{Tertiary representations of the S1 and S2 subunits of the spike protein}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.7\textwidth,keepaspectratio]{img/webinar/s1s2}
+		\label{img:mot2}
+		\caption{Tertiary representations of the S1 and S2 subunits of the spike protein using PsiPred. Source: \cite{spiga2003molecular}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Drug discovery}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Drug discovery}{Definition}
+	\begin{block}{Definition}
+		Drug discovery is the process by new candidate medications are discovered \cite{usafooddrug2020}.
 	\end{block}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Goals}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Goals}{}
-	\begin{block}{Long-term}
-		\begin{itemize}
-			\item Learn. \pause
-			\item Publish papers. \pause
-			\item Participate in projects. \pause
-			\item Advise in thesis deveploment. \pause
-		\end{itemize}
-	\end{block}
+\begin{frame}{Drug discovery}{From a million to one}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/drug2}
+		\label{img:mot2}
+		\caption{Process in drug discovery. Source: \cite{chanin2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
-	\begin{block}{Short-term}
-		\begin{itemize}
-			\item Redact a poster. 
-		\end{itemize}
-	\end{block}
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Drug discovery}{COVID-19 main protease}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=0.8\textwidth,keepaspectratio]{img/webinar/protease}
+		\label{img:mot2}
+		\caption{Schematic representation of the coronavirus protease. Source: \cite{zhang2020crystal}}
+	\end{figure}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Methodology}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Methodology}{}
+\begin{frame}{Drug discovery}{N3 inhibitor of main protease}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/drug}
+		\label{img:mot2}
+		\caption{The crystal structure of SARS-CoV-2 main protease N3 inhibitor. Source: \cite{jin2020structure}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Drug discovery}{Molecular docking with Glide}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/glide}
+		\label{img:mot2}
+		%\caption{Glide offers the full range of speed vs. accuracy options, from the HTVS (high-throughput virtual screening) mode for efficiently enriching million compound libraries, to the SP (standard precision) mode for reliably docking tens to hundreds of thousands of ligand with high accuracy.}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Drug discovery}{Molecular docking}
+	\begin{block}{Molecular docking}
+		Molecular docking is a computer simulation procedure to
+		predict the conformation of a receptor-ligand complex \cite{dias2008molecular}
+	\end{block}
+
 	\begin{block}{}
+		Algorithms used:
 		\begin{itemize}
-			\item Meetings each week \textbf{(Thursdays 8:45 pm).} \pause
-			\item Communication channels: Whatsapp and Google classroom (yenan4z). \pause
-			\item At the beginning, the professor will teach the key concepts. \pause
-			\item Make groups on different topics. 
+			\item Fast shape matching (take into account the geometric).
+			\item Simulated Anneling.
+			\item Genetic algorithms.
+			\item Tabu search.
 		\end{itemize}
 	\end{block}
-
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 
 
-
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Drug discovery}{Protease Inhibitors Designed Using Generative Deep Learning Approaches}
+	\begin{figure}[]
+		\centering
+		\includegraphics[width=\textwidth,keepaspectratio]{img/webinar/drug3}
+		\label{img:mot2}
+		\caption{Representative examples of the structures generated to target the main protease of
+			2019-nCoV. Novelty was assessed using similarity search in ChEMBL Database. Source: \cite{Zhavoronkov2020}}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 %-------------------------------------------------------
 %-------------------------------------------------------
