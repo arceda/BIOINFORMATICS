@@ -17,8 +17,8 @@
 \newcommand{\cscurso}{Computación Molecular Biológica}
 \newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
 \newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
-\newcommand{\cspracnr}{06}
-\newcommand{\cstema}{Alineamiento local}
+\newcommand{\cspracnr}{05}
+\newcommand{\cstema}{Alineamiento de Secuencias con Programación Dinámica}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -178,43 +178,14 @@
 
 	%\subsection{Pregunta 1}
 	\begin{enumerate}
+		\item 
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{AAAC} y \textbf{AGC,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
 		
 		\item 
-		
-		 Implemente el algoritmo de alineamiento local utilizando el algoritmo de Smith-waterman. Evalue sus resultados con las secuencias:
-				\begin{itemize}
-					\item $S_1$: AGC
-					\item $S_2$: AAG
-				\end{itemize}
-			
-		Utilice $gapOpen = gapEXTEND = -5$ y la siguiente matriz de sustitución:
-		
-		\begin{table}[hbt!]
-			\centering
-			\begin{tabular}{l|llll}
-				\textbf{} & A  & C  & G  & T  \\
-				\hline
-				A         & 2  & -7 & -5 & -7 \\
-				C         & -7 & 2  & -7 & -5 \\
-				G         & -5 & -7 & 2  & -7 \\
-				T         & -7 & -5 & -7 & 2 
-			\end{tabular}
-		\end{table}
-	
-		La salida debe incluir el \textit{score matrix} y todos los alineamientos posibles.
-			
-		\item 
-		
-		Utilice el algoritmo implentado anteriormente, pero esta vez con secuencies reales. Se recomienda utilizar las secuencias de ADN. Utilice $gapOpen = gapEXTEND = -5$, $identicalMatch = 2$ y $mismatch = -2$. Puede utilizar estas bases de datos:
-		
-		\begin{itemize}
-			\item \href{https://www.ncbi.nlm.nih.gov/genome/viruses/}{NCBI virus.}
-			\item \href{https://www.viprbrc.org/brc/home.spg?decorator=vipr}{Virus pathogen resource.}
-			\item \href{http://castor.bioinfo.uqam.ca/}{Castor.}
-		\end{itemize}
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{ATAG} y \textbf{TTCG}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -1 for an alignment with a gap}.
 		
 		\item 
-		Evalue la pregunta anterior con otros valores de $gapOpen, gapEXTEND, identicalMatch$ y $mismatch$. Verifique si obtiene el mismo alineamiento y comente sus resultados.
+		Encuentre el mejor alineamiento local entre las secuencias \textbf{ATACTGGG} y \textbf{TGACTGAG,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
 		
 
 	
