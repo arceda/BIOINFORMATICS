@@ -1,0 +1,287 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{05}
+\newcommand{\cstema}{Alineamiento de Secuencias con Programación Dinámica}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\cscurso}
+\lhead{\csdocente}
+\rfoot{Página \thepage}
+
+% Logos in first page
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[C]{\footnotesize Página \thepage\ }%
+	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
+	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
+	\fancyhead[C]{  \fontsize{8}{8}\selectfont
+		\csuniversidad \\  
+		\textbf{\csescuela} \\ 
+		Curso: \cscurso 
+	}
+	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
+	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+	
+}
+\headheight 40pt              %% put this outside
+\headsep 10pt 
+
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\usepackage[english,spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para la imagen de fondo
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+	\put(0,0){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
+			\vfill
+		}}}
+		
+		
+		\title{\textbf{Solución de la práctica \cspracnr   } }
+		\author{\csdocente}
+		\date{\today}
+		
+		
+		
+\begin{document}
+	
+	% image background
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%\AddToShipoutPicture{\BackgroundPic}
+	%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+	
+	
+	\maketitle
+	
+	\begin{table}[h]
+		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+			\hline 
+			\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+			\hline 
+			\csdocente & \csescuela & \cscurso    \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[h]
+		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+			\hline 
+			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+			\hline 
+			\cspracnr & \cstema & 3 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	
+	\section{Competencias del curso}
+	\begin{itemize}
+		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de Bioinformática.
+		\item Analiza, diseña y propone soluciones frente a problemas bioinformáticos.
+		\item Sabe cómo utilizar y conoce las bases computacionales de herramientas modernas de secuenciamiento,
+		alineamiento, árboles filogenéticos y mapeo de genomas.
+	\end{itemize}
+	
+	
+	\section{Competencias de la práctica}
+	\begin{itemize}
+		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de \cstema.
+	\end{itemize}
+	
+	\section{Equipos y materiales}
+	\begin{itemize}
+		\item Latex
+		\item Conección a internet 
+		\item Python
+		\item Matplotlib 
+		\item Numpy 
+		\item BioPython
+		\item Cuenta en Github
+	\end{itemize}
+	
+	\section{Entregables}
+	\begin{itemize}
+		%\item Se debe elaborar un informe donde se explique cada tema asignado.
+		%\item Exposición de cada tema, cada exposición no debe durar mas de 10 min.
+		\item Se debe elaborar un informe en Latex donde se responda a cada ejercicio de la Sección \ref{sec:ejercicios}.
+		\item En el informe se debe agregar un enlace al repositorio Github donde esta el código.
+		\item En el informe se debe agregar el código fuente asi como capturas de pantalla de la ejecución y resultados del mismo.
+	\end{itemize}
+	
+	
+	
+	
+	\clearpage
+	
+	
+	\section{Ejercicios}\label{sec:ejercicios}
+		
+
+	%\subsection{Pregunta 1}
+	\begin{enumerate}
+		\item 
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{AAAC} y \textbf{AGC,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[height=4cm,keepaspectratio]{img/prac5_1}	
+			%\caption{Autómata Finito  Determinista.}
+			%\label{img:auto}
+		\end{figure}
+		
+		\begin{table}[hbt!]
+			\centering
+		
+			\begin{tabular}{|l|l|l|l|}
+				\hline
+				Alignments &  
+				\begin{tabular}{cccc} 
+					A & A & A & C \\  
+					- & A & G & C
+				\end{tabular}  & 
+				\begin{tabular}{cccc} 
+					A & A & A & C \\  
+					A & G & - & C
+				\end{tabular} & 
+				\begin{tabular}{cccc} 
+					A & A & A & C \\  
+					A & - & G & C
+				\end{tabular}  \\ \hline
+				
+				Score      & (-2)+1+(-1)+1 = -1 & 1+(-1)+(-2)+1 = -1 & 1+ (-2)+(-1)+1 = -1  \\ \hline
+				Solution   & Best Alignment & Best Alignment & Best Alignment   \\ \hline            
+			\end{tabular}
+		\end{table}
+		
+		\item 
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{ATAG} y \textbf{TTCG}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -1 for an alignment with a gap}.
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[height=4cm,keepaspectratio]{img/prac5_2}	
+			%\caption{Autómata Finito  Determinista.}
+			%\label{img:auto}
+		\end{figure}
+		
+		\begin{table}[hbt!]
+			\centering
+			
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Alignments &  
+				\begin{tabular}{cccc} 
+					A & T & A & G \\  
+					T & T & C & G
+				\end{tabular}  & 
+				
+				\begin{tabular}{ccccc} 
+					A & - & T & A & G \\  
+					- & T & T & C & G
+				\end{tabular}  \\ \hline
+				
+				Score      & (-1)+1+(-1)+1 = 0 & (-1)+(-1)+1-1+1 = -1  \\ \hline
+			          
+			\end{tabular}
+		\end{table}
+		
+		
+		\clearpage
+		\item 
+		Encuentre el mejor alineamiento local entre las secuencias \textbf{ATACTGGG} y \textbf{TGACTGAG,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
+		
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[height=6cm,keepaspectratio]{img/prac5_3}	
+			%\caption{Autómata Finito  Determinista.}
+			%\label{img:auto}
+		\end{figure}
+		
+		\begin{table}[hbt!]
+			\centering
+			
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Alignments &  
+				\begin{tabular}{cccccc} 
+					A & C & T & G & G & G \\  
+					A & C & T & G & A & G
+				\end{tabular}  & 
+				
+				\begin{tabular}{cccc} 
+					A & C & T & G \\  
+					A & C & T & G 
+				\end{tabular}  \\ \hline
+				
+				Score      & 1+1+1+1+(-1)+1 = 4 & 1+1+1+1 = 4  \\ \hline
+				
+			\end{tabular}
+		\end{table}
+		
+	
+
+	\end{enumerate}
+	
+	%\clearpage
+	%\bibliographystyle{ieeetr}
+	%\bibliography{../bibliography}
+	
+\end{document}
