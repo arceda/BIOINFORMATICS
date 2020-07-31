@@ -9,6 +9,7 @@
 \usepackage{multicol}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\csemail}{vmachacaa@unsa.edu.pe}
@@ -16,12 +17,13 @@
 \newcommand{\cscurso}{Computación Molecular Biológica}
 \newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
 \newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{08}
+\newcommand{\cstema}{BLAST}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \usepackage{fancyhdr}
-
-
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\cscurso}
@@ -90,12 +92,9 @@
 		}}}
 		
 		
-		
-		
-		
-\title{\textbf{Práctica 1}}
-\author{\csdocente}
-\date{\today}
+		\title{\textbf{Práctica \cspracnr}}
+		\author{\csdocente}
+		\date{\today}
 		
 		
 		
@@ -128,7 +127,7 @@
 			\hline 
 			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
 			\hline 
-			01 & Secuenciamiento de ADN & 3 horas   \\
+			\cspracnr & \cstema & 3 horas   \\
 			\hline 
 		\end{tabular}
 	\end{table}
@@ -145,40 +144,54 @@
 	
 	\section{Competencias de la práctica}
 	\begin{itemize}
-		\item Comprender las bases teórias del secuenciamiento de ADN.
+		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de \cstema.
 	\end{itemize}
 	
 	\section{Equipos y materiales}
 	\begin{itemize}
-		\item Editor de texto  Latex 
+		\item Latex
+		\item Conección a internet 
+		\item Python
+		\item Matplotlib 
+		\item Numpy 
+		\item BioPython
+		\item Cuenta en Github
 	\end{itemize}
 	
 	\section{Entregables}
 	\begin{itemize}
-		\item Se debe elaborar un informe en Latex donde se desarrolle el trabajo solicitado.
-		\item El informe se desarrollará en grupos de 4.
-		\item El informe deberá estar correctamente citado utilizando las normas APA.
+		%\item Se debe elaborar un informe donde se explique cada tema asignado.
+		%\item Exposición de cada tema, cada exposición no debe durar mas de 10 min.
+		\item Se debe elaborar un informe en Latex donde se responda a cada ejercicio de la Sección \ref{sec:ejercicios}.
+		\item En el informe se debe agregar un enlace al repositorio Github donde esta el código.
+		\item En el informe se debe agregar el código fuente asi como capturas de pantalla de la ejecución y resultados del mismo.
 	\end{itemize}
-		
+	
+	
 	
 	
 	\clearpage
 	
 	
-	\section{Desarrollo}\label{sec:ejercicios}
+	\section{Ejercicios}\label{sec:ejercicios}
+		
+
+	%\subsection{Pregunta 1}
 	\begin{enumerate}
-		\item Desarrolle un informe sobre secuencimiento de ADN con la siguiente estructura:
-			\begin{itemize}
-				\item Definición de secuenciamiento de ADN.
-				\item Historia del secuenciamiento de ADN (cite los paper donde se público cada técnica).
-				\item Método de Sanger.
-				\item Problemas actuales del secuenciamiento de ADN.
-				\item Conclusiones
-				\item Referencias
-			\end{itemize}
+		
+		\item 
+		
+		 Construya una pequeña base de datos de ADN's o aminoacidos. Puede utilizar secuencias de \href{https://www.uniprot.org/}{UniProt}, \href{http://castor.bioinfo.uqam.ca/}{Castor} o las que usted desee.
+		 
+		 \item
+		 Implemente el algoritmo original de BLAST y evalue sus resultados en la base de datos construida anteriormente. 
+				
 	
+		
+
+	
+
 	\end{enumerate}
-	
 	
 	%\clearpage
 	%\bibliographystyle{ieeetr}
