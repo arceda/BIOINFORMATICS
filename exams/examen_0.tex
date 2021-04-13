@@ -1,0 +1,156 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage[ruled,vlined]{algorithm2e}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Bioinformática}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{}
+\newcommand{\cstema}{-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{ \raisebox{0.1\height}{\includegraphics[width=3cm]{img/logo_unsa}} }
+\fancyhead[C]{ \fontsize{7}{7}\selectfont	\csuniversidad \\ \csescuela \\ \textbf{\cscurso} \\ \raisebox{\height}{ } }
+\fancyhead[R]{ \raisebox{0.1\height}{\includegraphics[width=1.5cm]{img/logo_epcc_unsa}} }
+\fancyfoot[L]{MSc. Vicente Machaca}
+\fancyfoot[C]{\cscurso}
+\fancyfoot[R]{Página \thepage}
+
+
+\usepackage[english,spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\usepackage[spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+
+
+\begin{document}
+	
+	% image background
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%\AddToShipoutPicture{\BackgroundPic}
+	%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+	
+	\begin{center}	
+		\fontsize{15}{15} \textbf{Examen de entrada} \\ \vspace{0.25cm}
+		\csdocente \\
+		\today \\ \vspace{0.25cm}
+	\end{center}
+
+	\begin{flushleft}
+	Nombre: \\
+	Apellidos:\\
+	CUI:\\
+	\end{flushleft}
+	
+	%\begin{table}[h]
+	%	\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+	%		\hline 
+	%		\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+	%		\hline 
+	%		\csdocente & \csescuela & \cscurso    \\
+	%		\hline 
+	%	\end{tabular}
+	%\end{table}
+	
+	%\begin{table}[h]
+	%	\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+	%		\hline 
+	%		\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+	%		\hline 
+	%		\cspracnr & \cstema & 3 horas   \\
+	%		\hline 
+	%	\end{tabular}
+	%\end{table}
+	
+	
+
+	%\section{Actividades}
+	%En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el algoritmo de Dot matrix.
+	
+	
+	
+	
+	\section*{Preguntas}
+	
+	\begin{enumerate}
+		\item Explique qué es el ADN. \textbf{(4 puntos)}
+		\item Explique qué son los genes y proteínas. \textbf{(4 puntos)}
+		\item ¿A que cree que se deban las mutaciones en el ADN?. \textbf{(4 puntos)}
+		\item Explique como es el proceso de aprendizaje de los modelos de \textit{machine learning}. \textbf{(4 puntos)}
+		\item Implementar un programa en el lenguaje de su preferencia que reciba como entrada dos cadenas de texto y retorne un valor numérico indicando el grado de similitud entre dichas cadenas. Usted puede definir qué criterios tomar para retornar el grado de similitud. \textbf{(4 puntos)}\\
+		
+		Ejemplos de cadenas similares: 
+		\begin{itemize}
+			\item 	cadena\_1: ACGT
+			\item 	cadena\_2: ACGGT \\
+			\item 	cadena\_1: GTAACGT
+			\item 	cadena\_2: GTAAGT \\
+			\item 	cadena\_1: ACGT
+			\item 	cadena\_2: AGGT
+		\end{itemize}		
+		
+	\end{enumerate}
+	
+
+	
+	%\clearpage
+	%\bibliographystyle{ieeetr}
+	%\bibliography{bibliography}
+	
+\end{document}
