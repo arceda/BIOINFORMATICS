@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{array}
 \usepackage{multicol}
+\usepackage{float}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 
 
@@ -14,7 +15,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\csemail}{vmachacaa@unsa.edu.pe}
 \newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
-\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\cscurso}{Bioinformática}
 \newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
 \newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
 \newcommand{\cspracnr}{05}
@@ -179,18 +180,31 @@
 	%\subsection{Pregunta 1}
 	\begin{enumerate}
 		\item 
-		Encuentre el mejor alineamiento global entre las secuencias \textbf{AAAC} y \textbf{AGC,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{AAAC} y \textbf{AGC,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}. Luego, encuentre el mejor alineamiento utilizando la matriz de similitud del Cuadro \ref{tab:mat} y costo por cada gap de -2.
 		
 		\item 
-		Encuentre el mejor alineamiento global entre las secuencias \textbf{ATAG} y \textbf{TTCG}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -1 for an alignment with a gap}.
-		
+		Encuentre el mejor alineamiento global entre las secuencias \textbf{ATAG} y \textbf{TTCG}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -1 for an alignment with a gap}. Luego, encuentre el mejor alineamiento utilizando la matriz de similitud del Cuadro \ref{tab:mat} y costo por cada gap de -2.
+		 
 		\item 
-		Encuentre el mejor alineamiento local entre las secuencias \textbf{ATACTGGG} y \textbf{TGACTGAG,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}.
-		
-
-	
+		Encuentre el mejor alineamiento local entre las secuencias \textbf{ATACTGGG} y \textbf{TGACTGAG,}, con el siguiente \textit{scoring scheme: +1 for match, -1 for mismatch and -2 for an alignment with a gap}. Luego, encuentre el mejor alineamiento utilizando la matriz de similitud del Cuadro \ref{tab:mat} y costo por cada gap de -2.
+			
 
 	\end{enumerate}
+	
+	
+	\begin{table}[H]
+		\centering
+		\caption{Matriz de similitud.}
+		\label{tab:mat}
+		\begin{tabular}{ccccc}
+			& A  & C  & G  & T  \\
+			A & 2  & -7 & -5 & -7 \\
+			C & -7 & 2  & -7 & -5 \\
+			G & -5 & -7 & 2  & -7 \\
+			T & -7 & -5 & -7 & 2 
+		\end{tabular}
+	\end{table}
+
 	
 	%\clearpage
 	%\bibliographystyle{ieeetr}

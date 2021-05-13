@@ -206,3 +206,16 @@ exams/examen_0.blg
 exams/examen_0.log
 exams/examen_0.out
 exams/examen_0.synctex.gz
+
+
+*.log
+*.aux
+*.snm
+*synctex.gz
+*.out
+*.nav
+*.toc
+*.vrb
+*.pyc
+*.bbl
+*.blg
