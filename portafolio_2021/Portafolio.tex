@@ -43,11 +43,31 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
-\usepackage{float}
-\input{texs/structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
 
+\input{texs/structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+\usepackage{verbatim} 
+\usepackage{float}
+\usepackage{xcolor,colortbl}
+\definecolor{light_gray}{rgb}{0.9,0.9,0.9}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 %\hypersetup{pdftitle={Title},pdfauthor={Author}} % Uncomment and fill out to include PDF metadata for the author and title of the book
 
+
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+\newcommand{\cscourse}{Bioinformática}
+\newcommand{\cscourseCode}{1705164}
+\newcommand{\csauthor}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscategoria}{Auxiliar}
+\newcommand{\csregimen}{TP20}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csfacultad}{Facultad de Ingeniería de Producción y Servivios}
+\newcommand{\csdepartamento}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\csepcc}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\cssemestre}{2021-A}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -61,11 +81,11 @@
 \begin{tikzpicture}[remember picture,overlay]
 \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{background_unsa.pdf}};
 \draw (current page.center) node [xshift=3cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth - 8cm}
-{\centering Universidad Nacional de San Agustín de Arequipa\\[20pt] % School
-{\huge Escuela Profesional de Ciencia de la Computación}\\[20pt] % School
-{\huge Computación Molecular Biológica}\\[1pt] % Course
-{\huge (Código: 1005155)}\\[20pt] % Course
-{\Large Semestre 2020A}}}; % Semester
+{\centering \csuniversidad\\[20pt] % School
+{\huge \csepcc}\\[20pt] % School
+{\huge \cscourse }\\[1pt] % Course
+{\huge (Código: \cscourseCode)}\\[20pt] % Course
+{\Large Semestre \cssemestre}}}; % Semester
 \end{tikzpicture}
 \vfill
 \endgroup
@@ -90,35 +110,24 @@
 \pagestyle{fancy} % Enable headers and footers again
 
 \chapterimage{background_unsa.pdf} % Chapter heading image
-
-\import{chapter/}{texs/cv_icacit.tex}
-
-\import{chapter/}{texs/silabo_dufa.tex}
-
-\import{chapter/}{texs/silabo_icacit.tex}
-
-\import{chapter/}{texs/examen_0.tex}
-
-\import{chapter/}{texs/examen_1.tex}
-
-%\import{chapter/}{texs/segundo_parcial.tex}
-
-%\import{chapter/}{texs/tercer_parcial.tex}
-
-\import{chapter/}{texs/evaluacion_continua_1.tex}
-
-%\import{chapter/}{texs/evaluacion_continua_2.tex}
-
-%\import{chapter/}{texs/evaluacion_continua_3.tex}
-
-%\import{chapter/}{texs/asistencia.tex}
-
-%\import{chapter/}{texs/registro_notas.tex}
-
-%\import{chapter/}{texs/material_curso.tex}
-
-%\import{chapter/}{texs/desempeno.tex}
-
-%\import{chapter/}{texs/informe_final_curso.tex}
+\import{texs/}{1_cv_icacit.tex}
+\import{texs/}{2_silabo_dufa.tex}
+\import{texs/}{3_silabo_icacit.tex}
+\import{texs/}{4_mapeo_estudiante.tex}
+\import{texs/}{5_material_curso.tex}
+\import{texs/}{6_prueba_entrada.tex}
+\import{texs/}{7_primer_parcial.tex}
+\import{texs/}{8_evaluacion_continua_1.tex}
+%\import{texs/}{9_estadisticas_asistencia_1.tex}
+%\import{texs/}{10_registro_notas_1.tex}
+%\import{texs/}{11_segundo_parcial.tex}
+%\import{texs/}{12_evaluacion_continua_2.tex}
+%\import{texs/}{13_estadisticas_asistencia_2.tex}
+%\import{texs/}{14_registro_notas_2.tex}
+%\import{texs/}{15_tercer_parcial.tex}
+%\import{texs/}{16_evaluacion_continua_3.tex}
+%\import{texs/}{17_estadisticas_asistencia_3.tex}
+%\import{texs/}{18_registro_notas_3.tex}
+%\import{texs/}{19_informe_final_curso.tex}
 
 \end{document}
