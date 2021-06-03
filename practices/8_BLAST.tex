@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{cite}
@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\csemail}{vmachacaa@unsa.edu.pe}
 \newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
-\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\cscurso}{Bioinformática}
 \newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
 \newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
 \newcommand{\cspracnr}{08}
@@ -26,51 +26,53 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\cscurso}
-\lhead{\csdocente}
-\rfoot{Página \thepage}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{ \raisebox{0.1\height}{\includegraphics[width=3cm]{img/logo_unsa}} }
+\fancyhead[C]{ \fontsize{7}{7}\selectfont	\csuniversidad \\ \csescuela \\ \textbf{\cscurso} \\ \raisebox{\height}{ } }
+\fancyhead[R]{ \raisebox{0.1\height}{\includegraphics[width=1.5cm]{img/logo_epcc_unsa}} }
+\fancyfoot[L]{MSc. Vicente Machaca}
+\fancyfoot[C]{\cscurso}
+\fancyfoot[R]{Página \thepage}
 
-% Logos in first page
-\fancypagestyle{plain}{%
-	\renewcommand{\headrulewidth}{0pt}%
-	\fancyhf{}%
-	\fancyfoot[C]{\footnotesize Página \thepage\ }%
-	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
-	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
-	\fancyhead[C]{  \fontsize{8}{8}\selectfont
-		\csuniversidad \\  
-		\textbf{\csescuela} \\ 
-		Curso: \cscurso 
-	}
-	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
-	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
-	
-}
-\headheight 40pt              %% put this outside
-\headsep 10pt 
-
-
-% para el codigo fuente
 \usepackage{listings}
 \usepackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{forestgreen}{rgb}{0.12, 0.6, 0.32}
+\definecolor{blue}{rgb}{0, 0,1}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for, let, const},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{blue}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{forestgreen}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
 \lstset{frame=tb,
-	language=Python,
-	aboveskip=3mm,
-	belowskip=3mm,
+	language=JavaScript,
+	%backgroundcolor=\color{white},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
 	showstringspaces=false,
-	columns=flexible,
-	basicstyle={\small\ttfamily},
+	showspaces=false,
 	numbers=none,
-	numberstyle=\tiny\color{gray},
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
 	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3
+	showtabs=false,
+	captionpos=b
 }
 
 \usepackage[english,spanish]{babel}
@@ -78,23 +80,6 @@
 \renewcommand{\figurename}{Figura}
 \renewcommand{\refname}{Referencias}
 \renewcommand{\tablename}{Tabla}
-
-
-% para la imagen de fondo
-\usepackage{eso-pic}
-\newcommand\BackgroundPic{%
-	\put(0,0){%
-		\parbox[b][\paperheight]{\paperwidth}{%
-			\vfill
-			\centering
-			\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
-			\vfill
-		}}}
-		
-		
-		\title{\textbf{Práctica \cspracnr}}
-		\author{\csdocente}
-		\date{\today}
 		
 		
 		
@@ -108,12 +93,14 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	
+	\begin{center}	
+		\fontsize{15}{15} \textbf{Práctica \cspracnr}
+	\end{center}
 	
-	
-	\maketitle
+	%\maketitle
 	
 	\begin{table}[h]
-		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
 			\hline 
 			\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
 			\hline 
@@ -123,7 +110,7 @@
 	\end{table}
 	
 	\begin{table}[h]
-		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
 			\hline 
 			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
 			\hline 
@@ -133,38 +120,33 @@
 	\end{table}
 	
 	
-	\section{Competencias del curso}
+	\section{Resultados del estudiante}
 	\begin{itemize}
-		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de Bioinformática.
-		\item Analiza, diseña y propone soluciones frente a problemas bioinformáticos.
-		\item Sabe cómo utilizar y conoce las bases computacionales de herramientas modernas de secuenciamiento,
-		alineamiento, árboles filogenéticos y mapeo de genomas.
+		\item (a) Conocimientos en computación
+		\item (b) Análisis de problemas.
+		\item (c) Diseño y desarrollo de soluciones.
+		\item (d) Trabajo individual y en equipo.
+		\item (h) Uso de herramientas modernas.
 	\end{itemize}
 	
 	
 	\section{Competencias de la práctica}
 	\begin{itemize}
-		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de \cstema.
+		\item Analiza el problema de alineamiento y propone una solución utilizando el algoritmo BLAST. 
+		\item Trabaja en equipo para el desarrollo de soluciones.
 	\end{itemize}
 	
 	\section{Equipos y materiales}
 	\begin{itemize}
 		\item Latex
-		\item Conección a internet 
 		\item Python
-		\item Matplotlib 
-		\item Numpy 
 		\item BioPython
-		\item Cuenta en Github
 	\end{itemize}
 	
 	\section{Entregables}
 	\begin{itemize}
-		%\item Se debe elaborar un informe donde se explique cada tema asignado.
-		%\item Exposición de cada tema, cada exposición no debe durar mas de 10 min.
-		\item Se debe elaborar un informe en Latex donde se responda a cada ejercicio de la Sección \ref{sec:ejercicios}.
-		\item En el informe se debe agregar un enlace al repositorio Github donde esta el código.
-		\item En el informe se debe agregar el código fuente asi como capturas de pantalla de la ejecución y resultados del mismo.
+		\item Se debe elaborar un informe en Latex.
+		\item El informe debe contener un enlace a github, pruebas y conclusiones.
 	\end{itemize}
 	
 	
@@ -177,22 +159,36 @@
 		
 
 	%\subsection{Pregunta 1}
-	\begin{enumerate}
-		
-		\item 
-		
-		 Construya una pequeña base de datos de ADN's o aminoacidos. Puede utilizar secuencias de \href{https://www.uniprot.org/}{UniProt}, \href{http://castor.bioinfo.uqam.ca/}{Castor} o las que usted desee.
+	\begin{enumerate}		
+		\item Construya una pequeña base de datos de ADN's o aminoacidos. Puede utilizar secuencias de \href{https://www.uniprot.org/}{UniProt}, \href{http://castor.bioinfo.uqam.ca/}{Castor} o las que usted desee.
 		 
-		 \item
-		 Implemente el algoritmo original de BLAST y evalue sus resultados en la base de datos construida anteriormente. 
-				
-	
-		
-
-	
-
+		 \item Implemente el algoritmo original de BLAST y evalue sus resultados en la base de datos construida anteriormente. 
 	\end{enumerate}
-	
+
+\clearpage
+\section{Rúbricas}
+
+\begin{table}[hbt!]
+	\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+	{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+		\begin{tabular}{|p{5cm}|x{3cm}|x{3cm}|x{3cm}|}
+			\hline 
+			\textbf{Rúbrica} & \textbf{Cumple}  & \textbf{Cumple con obs.}  & \textbf{No cumple} \\
+			\hline 
+			\textbf{Informe}: Desarrolla un informe, con un formato limpio y facil de leer. Además, utiliza la plantilla brindada por el docente.   & 2 & 1 & 0   \\ 
+			\hline 
+			\textbf{Implementación}: Implementa el algoritmo BLAST [b, c].   & 16 & 8 & 0   \\ \hline			
+			
+			\textbf{Calidad de las pruebas}: Realiza las pruebas en una base de datos mayor a 10 secuencias y utiliza secuencias reales con mas de 1000 bases [c].  & 0 & 5 & 0   \\ \hline
+			
+			\textbf{Presentación}: El alumno demuestra el trabajo en equipo (github) y dominio del tema [d]. & 2 & 1 & 0   \\ 			\hline 
+			
+			\textbf{Errores ortográficos}: Por cada error ortográfico, se descontará 1 punto.  & - & - & -   \\ \hline
+			
+		\end{tabular}
+	}
+\end{table}
+
 	%\clearpage
 	%\bibliographystyle{ieeetr}
 	%\bibliography{../bibliography}
