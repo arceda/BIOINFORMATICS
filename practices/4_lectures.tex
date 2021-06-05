@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{cite}
@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\csemail}{vmachacaa@unsa.edu.pe}
 \newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
-\newcommand{\cscurso}{Computación Molecular Biológica}
+\newcommand{\cscurso}{Bioinformática}
 \newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
 \newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
 \newcommand{\cspracnr}{04}
@@ -26,51 +26,53 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\cscurso}
-\lhead{\csdocente}
-\rfoot{Página \thepage}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{ \raisebox{0.1\height}{\includegraphics[width=3cm]{img/logo_unsa}} }
+\fancyhead[C]{ \fontsize{7}{7}\selectfont	\csuniversidad \\ \csescuela \\ \textbf{\cscurso} \\ \raisebox{\height}{ } }
+\fancyhead[R]{ \raisebox{0.1\height}{\includegraphics[width=1.5cm]{img/logo_epcc_unsa}} }
+\fancyfoot[L]{MSc. Vicente Machaca}
+\fancyfoot[C]{\cscurso}
+\fancyfoot[R]{Página \thepage}
 
-% Logos in first page
-\fancypagestyle{plain}{%
-	\renewcommand{\headrulewidth}{0pt}%
-	\fancyhf{}%
-	\fancyfoot[C]{\footnotesize Página \thepage\ }%
-	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
-	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
-	\fancyhead[C]{  \fontsize{8}{8}\selectfont
-		\csuniversidad \\  
-		\textbf{\csescuela} \\ 
-		Curso: \cscurso 
-	}
-	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
-	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
-	
-}
-\headheight 40pt              %% put this outside
-\headsep 10pt 
-
-
-% para el codigo fuente
 \usepackage{listings}
 \usepackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{forestgreen}{rgb}{0.12, 0.6, 0.32}
+\definecolor{blue}{rgb}{0, 0,1}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for, let, const},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{blue}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{forestgreen}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
 \lstset{frame=tb,
-	language=Python,
-	aboveskip=3mm,
-	belowskip=3mm,
+	language=JavaScript,
+	%backgroundcolor=\color{white},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
 	showstringspaces=false,
-	columns=flexible,
-	basicstyle={\small\ttfamily},
+	showspaces=false,
 	numbers=none,
-	numberstyle=\tiny\color{gray},
-	keywordstyle=\color{blue},
-	commentstyle=\color{dkgreen},
-	stringstyle=\color{mauve},
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
 	breaklines=true,
-	breakatwhitespace=true,
-	tabsize=3
+	showtabs=false,
+	captionpos=b
 }
 
 \usepackage[english,spanish]{babel}
@@ -78,23 +80,6 @@
 \renewcommand{\figurename}{Figura}
 \renewcommand{\refname}{Referencias}
 \renewcommand{\tablename}{Tabla}
-
-
-% para la imagen de fondo
-\usepackage{eso-pic}
-\newcommand\BackgroundPic{%
-	\put(0,0){%
-		\parbox[b][\paperheight]{\paperwidth}{%
-			\vfill
-			\centering
-			\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
-			\vfill
-		}}}
-		
-		
-		\title{\textbf{Práctica \cspracnr}}
-		\author{\csdocente}
-		\date{\today}
 		
 		
 		
@@ -107,13 +92,15 @@
 	%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	\begin{center}	
+		\fontsize{15}{15} \textbf{Práctica \cspracnr}
+	\end{center}
 	
 	
-	
-	\maketitle
+	%\maketitle
 	
 	\begin{table}[h]
-		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
 			\hline 
 			\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
 			\hline 
@@ -123,7 +110,7 @@
 	\end{table}
 	
 	\begin{table}[h]
-		\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
 			\hline 
 			\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
 			\hline 
@@ -133,18 +120,19 @@
 	\end{table}
 	
 	
-	\section{Competencias del curso}
+	\section{Resultados del estudiante}
 	\begin{itemize}
-		\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de Bioinformática.
-		\item Analiza, diseña y propone soluciones frente a problemas bioinformáticos.
-		\item Sabe cómo utilizar y conoce las bases computacionales de herramientas modernas de secuenciamiento,
-		alineamiento, árboles filogenéticos y mapeo de genomas.
+		\item (a) Conocimientos en computación
+		\item (b) Análisis de problemas.
+		\item (c) Diseño y desarrollo de soluciones.
+		\item (d) Trabajo individual y en equipo.
+		\item (h) Uso de herramientas modernas.
 	\end{itemize}
 	
 	
 	\section{Competencias de la práctica}
 	\begin{itemize}
-		\item Comprender algunos tópicos en mutaciones, historia de la bioinformática y \textit{Virology}.
+		\item Comprender y investigar tópicos actuales en Bioinformática.
 	\end{itemize}
 	
 	\section{Equipos y materiales}
@@ -160,8 +148,8 @@
 	
 	\section{Entregables}
 	\begin{itemize}
-		\item Se debe elaborar un informe donde se explique cada tema asignado.
-		\item Exposición de cada tema, cada exposición no debe durar mas de 10 min.
+		\item Se debe elaborar diapositivas donde se explique el tema asignado.
+		\item Cada exposición no debe durar mas de \textbf{10 min}.
 		%\item Se debe elaborar un informe en Latex donde se responda a cada ejercicio de la Sección \ref{sec:ejercicios}.
 		%\item En el informe se debe agregar un enlace al repositorio Github donde esta el código.
 		%\item En el informe se debe agregar el código fuente asi como capturas de pantalla de la ejecución y resultados del mismo.
@@ -176,37 +164,74 @@
 	%\section{Ejercicios}\label{sec:ejercicios}
 	\section{Temas}\label{sec:ejercicios}
 	
-	A continuación se presentan los temas, cada grupo escogerá un tema y revisará el material de ayuda como mínimo.
+	A continuación se presentan los temas, cada grupo escogerá un tema y realizará una exposición. Debe considerar las fuentes recomendadas y además puede apoyarse de material adicional. No es necesario hacer un informe, pero si desarrollar una buena exposición.
 	
 	\begin{enumerate}
-		\item Historia de la Bioinformática. Se debe explicar cada hito inmportante de la Bioinformática, sustentar cada evento con las publicaciones en revistas cientificas. Material de ayuda:
+		\item Historia de la Bioinformática. Se debe explicar cada hito inmportante de la Bioinformática, 
 			\begin{itemize}
 				\item \href{https://www.coursera.org/learn/bioinformatics-pku/lecture/0i4EF/history-of-bioinformatics}{Video}
 				\item \href{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000809}{The Roots of Bioinformatics}
 			\end{itemize}
-		\item Mutaciones. Material de ayuda:
+		\item Mutaciones. 
 			\begin{itemize}
 				\item \href{https://www.nature.com/scitable/topicpage/dna-replication-and-causes-of-mutation-409/}{DNA Replication and Causes of Mutation}
 				\item \href{https://www.nature.com/scitable/topicpage/genetic-mutation-441/}{Genetic Mutation}
 				\item \href{https://www.ncbi.nlm.nih.gov/books/NBK21578/}{Mutations: Types and Causes}
 			\end{itemize}
 		
-		\item Replicación de virus. Material de ayuda:
+		\item Replicación de virus. 
 		\begin{itemize}
 			\item \href{https://reader.elsevier.com/reader/sd/pii/B9780123751560000047?token=9B13E6DC096F4D4A969692D3BE8C9F7F7A9EB515D7CEC08023BB74B04F1BDD0C115766A9665D276C5990CAA8124564E6}{Virus Replication}
 			\item \href{https://courses.lumenlearning.com/boundless-microbiology/chapter/dna-viruses-in-eukaryotes/}{DNA Viruses in Eukaryotes}
 			
 		\end{itemize}
 	
-		\item COVID-19. Material de ayuda:
+		\item COVID-19.
 		\begin{itemize}
 			\item \href{https://drive.google.com/file/d/19nQoOZv8gpxrDPQtlZHTMKygRZD2f15s/view?usp=sharing}{The Human Coronavirus Disease COVID-19}
-			\item \href{https://www.asm.org/COVID/COVID-19-Research-Registry/Basic-Virology}{COVID-19 Research regestry}
-			
+			\item \href{https://www.asm.org/COVID/COVID-19-Research-Registry/Basic-Virology}{COVID-19 Research registry}			
+		\end{itemize}
+	
+		\item Variantes de COVID-19.
+		\begin{itemize}
+			\item \href{https://www.cdc.gov/coronavirus/2019-ncov/variants/variant-info.html}{SARS-CoV-2 Variant Classifications and Definitions}
+			\item \href{https://www.nejm.org/doi/full/10.1056/NEJMc2100362}{New SARS-CoV-2 Variants — Clinical, Public Health, and Vaccine Implications}
+		\end{itemize}
+	
+		\item COVID-19 y \textit{drug discovery.}
+		\begin{itemize}
+			\item \href{https://idpjournal.biomedcentral.com/articles/10.1186/s40249-021-00812-9}{Human coronaviruses and therapeutic drug discovery}
 		\end{itemize}
 		
 	\end{enumerate}
+
+
+	\clearpage
+	\section{Rúbricas}
 	
+	\begin{table}[hbt!]
+		\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+		{\renewcommand{\arraystretch}{1.5}% for the vertical padding
+			\begin{tabular}{|p{5cm}|x{3cm}|x{3cm}|x{3cm}|}
+				\hline 
+				\textbf{Rúbrica} & \textbf{Cumple}  & \textbf{Cumple con obs.}  & \textbf{No cumple} \\
+				\hline 
+				%\textbf{Informe}: Desarrolla un informe, con un formato limpio y facil de leer. Además, utiliza la plantilla brindada por el docente.   & 2 & 1 & 0   \\ 
+%				\hline 
+				%\textbf{Implementación}: Implementa el algoritmo BLAST [b, c].   & 10 & 5 & 0   \\ \hline			
+				
+				\textbf{Dominio del tema}: Los alumnos demuestran dominio del tema durante la exposición [a].  & 5 & 2.5 & 0   \\ \hline
+
+				\textbf{Diapositivas}: Las diapositivas son de calidad, tiene gráficos, tablas y una buena presentación. Además los alumnos presentan poco texto en cada diapositiva [c].  & 5 & 2.5 & 0   \\ \hline
+				
+				\textbf{Trabajo en equipo}: Los alumnos demuestran el trabajo en equipo y fluidez de comunicación [d]. & 5 & 2.5 & 0   \\ 			\hline 
+				
+				\textbf{Errores ortográficos}: Por cada error ortográfico, se descontará 1 punto.  & - & - & -   \\ \hline
+				
+			\end{tabular}
+		}
+	\end{table}
+
 	
 	%\clearpage
 	%\bibliographystyle{ieeetr}

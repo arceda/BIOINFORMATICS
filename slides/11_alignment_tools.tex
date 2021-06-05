@@ -1,0 +1,408 @@
+\documentclass[10pt]{beamer}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\usepackage{ragged2e}
+
+
+%-------------------------------------------------------
+% INFORMATION IN THE TITLE PAGE
+%-------------------------------------------------------
+
+\newcommand{\cstitle}{\textbf{Bioinformatics}}
+\subtitle[]{Alignment tools}
+\newcommand{\cscourseCode}{1005155}
+\newcommand{\csauthor}{MSc. Vicente Machaca Arceda}
+\institute[UNSA]{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\instituteabr}{UNSA}
+\newcommand{\nameUp}{ICC Fase 1}
+\date{\today}
+\title[\cscourseCode]{\cstitle}
+\author{\csauthor}
+%%%%%%%%%%%%%%%%%
+
+\input{code_style.tex}
+
+%-------------------------------------------------------
+% CHOOSE THE THEME
+%-------------------------------------------------------
+\def\mycmd{0} % CS THEME
+%\def\mycmd{1} % MYTHEME
+%-------------------------------------------------------
+
+
+\if\mycmd1
+\usetheme[]{Feather}
+\newcommand{\chref}[2]{	\href{#1}{{\usebeamercolor[bg]{Feather}#2}} }
+\else
+\usepackage{csformat}
+\newcommand{\chref}[2]{	\href{#1}{{\color{blue}#2}}}
+\fi
+
+\newcommand{\1}{
+	\setbeamertemplate{background}{
+		\includegraphics[width=\paperwidth,height=\paperheight]{img/1}
+		\tikz[overlay] \fill[fill opacity=0.75,fill=white] (0,0) rectangle (-\paperwidth,\paperheight);
+	}
+}
+
+
+
+%-------------------------------------------------------
+% THE BODY OF THE PRESENTATION
+%-------------------------------------------------------
+
+\begin{document}
+	
+	
+	\AtBeginSubsection[]
+	{
+		\begin{frame}
+			\frametitle{Table of Contents}
+			\tableofcontents[currentsubsection]
+		\end{frame}
+	}
+	
+	
+	%-------------------------------------------------------
+	% THE TITLEPAGE
+	%-------------------------------------------------------
+	
+	\if\mycmd1 % MY THEME
+	\1{
+		\begin{frame}[plain,noframenumbering] 
+			\titlepage 
+		\end{frame}}
+		\else % CS THEME
+		\maketitle
+		\fi
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Table of Contents}
+\tableofcontents
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Objectives}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Introduction}{Objectives}
+\begin{itemize}
+    \item<1-> Learn the alignment tools and databases used in Bioinformatics. 
+  \end{itemize}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Alignment tools}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{BioPython}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{BioPython}{Definition}
+	\begin{block}{}
+		Biopython is a set of freely available tools for biological computation written in Python by an international team of developers.
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{BioPython}{Pairwise global alignment}
+\chref{https://biopython.org/docs/1.75/api/Bio.pairwise2.html}{Documentation}.
+\begin{lstlisting}[style=python]
+from Bio import pairwise2
+from Bio.pairwise2 import format_alignment
+
+alignments = pairwise2.align.globalxx("ACCGT", "ACG")
+print(format_alignment(*alignments[0]))
+\end{lstlisting}
+
+Results:
+\begin{lstlisting}[style=python]
+ACCGT
+| || 
+A-CG-
+Score=3
+\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{BioPython}{Pairwise local alignment}
+	\chref{https://biopython.org/docs/1.75/api/Bio.pairwise2.html}{Documentation}.
+	\begin{lstlisting}[style=python]
+	from Bio import pairwise2
+	from Bio.pairwise2 import format_alignment
+
+	alignments = pairwise2.align.localxx("ACCGT", "ACG")
+	print(format_alignment(*alignments[0]))
+	\end{lstlisting}
+	
+	Results:
+	\begin{lstlisting}[style=python]
+1 ACCG
+| ||
+1 A-CG
+Score=3	
+	\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Muscle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Muscle}{Multiple sequence alignment}
+	\begin{block}{}
+		It is a tool for multiple sequence alignment. Download page: \chref{http://www.drive5.com/muscle/downloads.htm}{link}.
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Muscle}{Multiple sequence alignment}
+Samples: \chref{https://drive.google.com/file/d/11DYDDj3K5bn7mLcINEBQk8luO-HGsvgH/view?usp=sharing}{seqs2.fasta}, \chref{https://drive.google.com/file/d/1lPPD36R8e_BLvq2SxMvPWVyWHXtrJ-lz/view?usp=sharing}{seqs3.fasta}
+\begin{lstlisting}[style=python]
+Basic usage
+
+muscle -in <inputfile> -out <outputfile>
+
+\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Muscle}{Multiple sequence alignment}
+	seqs3.fasta after alignment.
+	\begin{lstlisting}[style=python]	
+>sp|P13786|HBAZ_CAPHI Hemoglobin subunit zeta OS=Capra hircus GN=HBZ1 PE=3 SV=2 
+MSLTRTERTIL---WSKISTQADVIGTETLERLFSCYPQAKTYFPHFDLHSGSAQLRAHG
+SKVVAAVGDAVKSIDNVTSALSKLSELHAYVLRVDPVNFKFLSHCLLVTLASHFPADFTA
+DAHAAWDKFLSIVSGVLTEKYR
+>sp|P69905|HBA_HUMAN Hemoglobin subunit alpha OS=Homo sapiens GN=HBA1 PE=1 SV=2 
+MVLSPADKTNVKAAWGKVGAHAGEY-AEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHG
+KKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLLSHCLLVTLAAHLPAEFTP
+AVHASLDKFLASVSTVLTSKYR
+>sp|P01942|HBA_MOUSE Hemoglobin subunit alpha OS=Mus musculus GN=Hba PE=1 SV=2 
+MVLSGEDKSNIKAAWGKIGGHGAEYGAEALERMFASFPTTKTYFPHFDVSHGSAQVKGHG
+KKVADALASAAGHLDDLPGALSALSDLHAHKLRVD-VNFKLLSHCLLVTLASHHPADFTP
+AVHASLDKFLASVSTVLTSKYR	
+	\end{lstlisting}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Clustal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Clustal}{Multiple sequence alignment}
+	\begin{block}{}
+		It is a tool for multiple sequence alignment like Muscle. Download page: \chref{http://www.clustal.org/}{link}.
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Clustal}{}
+Samples: \chref{https://drive.google.com/file/d/11DYDDj3K5bn7mLcINEBQk8luO-HGsvgH/view?usp=sharing}{seqs2.fasta}, \chref{https://drive.google.com/file/d/1lPPD36R8e_BLvq2SxMvPWVyWHXtrJ-lz/view?usp=sharing}{seqs3.fasta}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/clustal}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Clustal}{Results}
+Results:
+	\begin{figure}
+	\includegraphics[width=\textwidth]{img/alignment/clustal_results}
+\end{figure}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{BLAST}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{BLAST}{}
+	\chref{https://blast.ncbi.nlm.nih.gov/Blast.cgi}{Web page}.	
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/blast}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{BLAST}{}
+	Evaluate BLAST with this sample: \chref{https://drive.google.com/file/d/1TGsGz4LMT9m06b6ANV4W8oFUBpIEIoqE/view?usp=sharing}{HIVGRPCG.fasta}.	
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/blast_online}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{BLAST}{}
+	Results:	
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/blast_online2}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mega}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Mega}{}
+	\chref{https://www.megasoftware.net/}{Web page}.
+	\begin{block}{}
+		The objective of the MEGA software has been to provide tools for exploring, discovering, and analyzing DNA and protein sequences from an evolutionary perspective. 
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Mega}{}
+	Main window.
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/mega}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Mega}{}
+	Multiple sequence alignment.
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/mega2}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[fragile]{Mega}{}
+	After alignment.
+	\begin{figure}
+		\includegraphics[width=\textwidth]{img/alignment/mega3}
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\if\mycmd1 % MY THEME
+\1{
+	{\1
+		\begin{frame}[plain,noframenumbering]
+			%\finalpage{Thank you}
+			\begin{figure}[]
+				\centering
+				\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/question.png}
+				%\label{img:mot2}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+	\end{frame}}
+	\else % CS THEME
+	\begin{frame}{Questions?}
+		\begin{figure}[]
+			\centering
+			\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{img/question.png}
+			%\label{img:mot2}
+			%\caption{Image example in 2 gray levels.}
+		\end{figure}
+		
+	\end{frame}
+	\fi
+	%-------------------------------------------------------
+	%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}[allowframebreaks]
+	\frametitle{References}
+	%\bibliographystyle{amsalpha}
+	\bibliographystyle{IEEEtran}
+	\bibliography{bibliography.bib}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+\end{document}
