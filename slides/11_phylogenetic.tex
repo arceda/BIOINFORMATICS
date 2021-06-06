@@ -120,13 +120,30 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Phylogenetics}{Definition}
-	\begin{block}{}
-		Phylogenetics is the study of the evolutionary history of living organisms using tree like diagrams to represent pedigrees of these organisms \cite{xiong2006essential}. 		
+\begin{frame}{Phylogenetics}{}
+	\begin{block}{What is evolution?}
+		In the biological context, evolution can be defined as the development of a
+		biological form from other preexisting forms or its origin to the current existing form
+		through natural selections and modifications \cite{xiong2006essential}. 		
 	\end{block}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Phylogenetics}{Definition}
+	\begin{block}{}
+		\textbf{Phylogenetics} is the study of the evolutionary history of living organisms using tree like diagrams to represent pedigrees of these organisms \cite{xiong2006essential}. 		
+	\end{block}
+
+	\begin{block}{}
+		\textbf{Molecular phylogenetics} is the study of evolutionary relationships of genes and other biological macromolecules by analyzing mutations at various positions in their sequences \cite{xiong2006essential}. 		
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
 
 %-------------------------------------------------------
 %-------------------------------------------------------
@@ -139,9 +156,122 @@
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Major Assumptions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Phylogenetics}{Example}
+\begin{frame}{Major Assumptions}{}
+	Major Assumptions:	
+	\begin{block}{}
+		\begin{itemize}
+			\item 		Molecular sequences used in phylogenetic construction are homologous, meaning that they share a common origin. 		
+			\item Each position in a sequence evolved independently. 		
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Terminology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Terminology}{}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{img/philo/example_4}
+		\caption{A phylogenetic tree showing an example of	bifurcation and multifurcation. Source: \cite{xiong2006essential}}			
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Rooted and unrooted}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Rooted and unrooted}{}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{img/philo/example_5}
+		\caption{An illustration of rooted versus unrooted trees. Source: \cite{xiong2006essential}}			
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Rooted and unrooted}{}
+	\begin{block}{}
+		The root of the tree is not known; the common ancestor is already
+		extinct \cite{xiong2006essential}. 		
+	\end{block}
+	
+	\begin{block}{}
+		There are two ways to define the root of a tree:
+		\begin{itemize}
+			\item \textbf{Outgroup}.- Which is a sequence that is homologous to the sequences under consideration, but separated from those sequences at an early evolutionary time.
+			\item \textbf{Midpoint rooting approach}.- The midpoint of the two most divergent groups
+			judged by overall branch lengths is assigned as the root.
+		\end{itemize} 
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gene versus species phylogeny}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Gene versus species phylogeny}{}
+	\begin{block}{Gene phylogeny}
+		Describes the evolution of that particular gene/protein. This sequence
+		may evolve more or less rapidly than other genes or may have a different evolutionary history from the rest of the genome \cite{xiong2006essential}. 		
+	\end{block}
+
+	\begin{block}{Species phylogeny}
+		The species evolution is the combined result of evolution by multiple genes in a genome \cite{xiong2006essential}. 		
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Forms of representation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Forms of representation}{cladograms and phylograms}
+	\begin{figure}
+		\includegraphics[width=0.7\textwidth]{img/philo/example_6}
+		\caption{Phylogenetic trees drawn as cladograms (top) and phylograms (bottom). Source: \cite{xiong2006essential}}			
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Forms of representation}{Newick}
 	\begin{figure}
 		\includegraphics[width=\textwidth]{img/philo/example_2}
 		\caption{Newick format of tree representation. Source: \cite{xiong2006essential}}			
@@ -150,162 +280,190 @@
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The true tree}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{Phylogenetics}{Methods}
+\begin{frame}{The true tree}{}
+	\begin{block}{}
+		The	search for a correct tree topology can sometimes be extremely difficult and computationally demanding. The number of potential tree topologies can be enormously large even with a moderate number of taxa \cite{xiong2006essential}.		
+	\end{block}
+
+	\begin{equation}
+		N_R = \frac{( 2n - 3)! }{ 2^{n-2} (n-2)!}
+	\end{equation}
+	
+	\begin{equation}
+	N_U = \frac{( 2n - 5)! }{ 2^{n-3} (n-3)!}
+	\end{equation}
+	where $N_R$ and $N_U$ are the number of rooted and unrooted trees, $n$ is the number of taxa.
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{The true tree}{}
 	\begin{figure}
-		\includegraphics[width=\textwidth]{img/philo/methods}
-		\caption{The most used methods to build philogenetic trees.}			
-	\end{figure}
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{UPGMA}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.8\textwidth]{img/philo/upgma_1}
-				\caption{Distances between sequences (score).}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			
-			Choose the smallest distance \textit{(A, C)}. Then computer the cluster.\\ 
-			
-			\begin{equation*}
-				\frac{AC}{2} = \frac{0.35}{2} = 0.175
-			\end{equation*}			
-			
-			\begin{figure}
-				\includegraphics[width=0.3\textwidth]{img/philo/upgma_2}
-			\end{figure}
-			
-		\end{column}
-	\end{columns}
-
+		\includegraphics[width=\textwidth]{img/philo/true_tree_1}
+		\caption{Unrooted and rooted trees for 3 taxa. Source: \cite{xiong2006essential}}			
+	\end{figure}	
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
 %-------------------------------------------------------
 %-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-	Join \textit{C, A} columns. 
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.8\textwidth]{img/philo/upgma_1}
-				\caption{Distances between sequences (score).}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.48\textwidth}	
-			\begin{figure}
-				\includegraphics[width=\textwidth]{img/philo/upgma_3}
-				\caption{New matrix}
-			\end{figure}			
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.8\textwidth]{img/philo/upgma_3}
-				\caption{Distances between sequences (score).}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			
-			Choose the smallest distance \textit{(B, A-C)}. Then computer the cluster.\\ 					
-			
-			\begin{figure}
-				\includegraphics[width=0.6\textwidth]{img/philo/upgma_4}
-			\end{figure}
-			
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-	Join \textit{AC, B} columns
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.8\textwidth]{img/philo/upgma_3}
-				\caption{Distances between sequences (score).}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.48\textwidth}	
-			\begin{figure}
-				\includegraphics[width=\textwidth]{img/philo/upgma_5}
-				\caption{New matrix}
-			\end{figure}			
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{figure}
-				\includegraphics[width=0.8\textwidth]{img/philo/upgma_5}
-				\caption{Distances between sequences (score).}
-			\end{figure}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			
-			Choose the smallest distance \textit{(B-A-C)}. Then computer the cluster.\\ 					
-			
-			\begin{figure}
-				\includegraphics[width=0.6\textwidth]{img/philo/upgma_6}
-			\end{figure}
-			
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-%-------------------------------------------------------
-%-------------------------------------------------------
-
-%-------------------------------------------------------
-%-------------------------------------------------------
-\begin{frame}{UPGMA}{Unweighted Pair Group Method Using Arithmetic Average}
-The estimated distances don’t match the actual evolutionary distances shown, which illustrates the failure of UPGMA. However, owing to its fast speed of calculation, it has found extensive usage.
-
+\begin{frame}{The true tree}{}
 	\begin{figure}
-		\includegraphics[width=\textwidth]{img/philo/upgma_7}
-	\end{figure}
+		\includegraphics[width=0.6\textwidth]{img/philo/true_tree_2}
+		\caption{Unrooted and rooted trees for 4 taxa. Source: \cite{xiong2006essential}}			
+	\end{figure}	
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{The true tree}{}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{img/philo/true_tree_3}
+		\caption{Total number of rooted ($\circ$) and unrooted ($\blacklozenge$) tree topologies as a function of the number	of taxa. The values in the y-axis are plotted in the log scale.
+			Source: \cite{xiong2006essential}}			
+	\end{figure}	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Methodology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Steps}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Methodology}{}
+	\begin{block}{}
+		\begin{itemize}
+			\item Choice a molecular marker.
+			\item Alignment.
+			\item Multiple substitution.
+			\item Phylogenetics building.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Choice of Molecular Markers}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Choice of Molecular Markers}{}
+	\begin{block}{}
+		Nucleotide or protein sequence data?
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Choice of Molecular Markers}{}
+	Use nucleotides for:
+	\begin{block}{}
+		\begin{itemize}
+			\item Studying very closely related organisms, nucleotide sequences, which
+			evolve more rapidly than proteins.
+		\end{itemize}
+	\end{block}
+
+	Use proteins because:
+	\begin{block}{}
+		\begin{itemize}
+			\item Protein sequences are relatively more conserved as a result of the degeneracy of the	genetic code.
+			\item Sixty-one codons encode for twenty amino acids, meaning thereby a change in a codon may not result in a change in amino acid.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Choice of Molecular Markers}{}
+	Moreover:
+	\begin{block}{}
+		\begin{itemize}
+			\item Protein sequences allow more sensitive alignment than	DNA sequences (20 vs. 4 characters). \pause
+			\item Two randomly related DNA sequences can result in up to 50\%
+			sequence identity, compared to 10\% for protein sequences. \pause
+			\item In the alignment of DNA, gaps almost always cause	frameshift errors. Protein sequences have a higher signal-to-noise ratio. \pause
+			\item DNA is informative for closely related sequences. Moreover, if we take into account that  sequences evolve faster at the DNA level.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Alignment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Alignment}{}
+	\begin{block}{}
+		Only the correct alignment produces correct phylogenetic.
+	\end{block}
+
+	\begin{block}{}
+		\begin{itemize}
+			\item  In some cases, researchers like to remove all insertions and deletions and only use positions that are shared by all sequences in the dataset. As a consequence, many phylogenetic signals are lost.
+			
+			\item There is an automatic approach in improving alignment quality. For example: Rascal 	and NorMD
+		\end{itemize}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiple Substitutions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{}
+	\begin{block}{}
+
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 
 %-------------------------------------------------------
