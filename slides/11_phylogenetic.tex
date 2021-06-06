@@ -356,12 +356,39 @@
 
 %-------------------------------------------------------
 %-------------------------------------------------------
+\begin{frame}{Methodology}{Input-Output}
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			Distances between sequences [A, B, C, D]:
+			\begin{equation*}			
+				\begin{bmatrix}
+				0 & 8 & 4 & 6 \\
+				8 & 0 & 8 & 8 \\
+				4 & 8 & 0 & 6 \\
+				6 & 8 & 6 & 0 \\
+				\end{bmatrix}			
+			\end{equation*}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			Output:
+				\begin{figure}
+					\includegraphics[width=\textwidth]{img/philo/tree}
+					%\caption{Output.}			
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
 \begin{frame}{Methodology}{}
 	\begin{block}{}
 		\begin{itemize}
 			\item Choice a molecular marker.
 			\item Alignment.
-			\item Multiple substitution.
+			\item Multiple substitution (distances).
 			\item Phylogenetics building.
 		\end{itemize}
 	\end{block}
@@ -459,12 +486,227 @@
 %-------------------------------------------------------
 \begin{frame}{Multiple Substitutions}{}
 	\begin{block}{}
+		After alignment, we need to measure the distance between sequences. A simple measure could be the number of substitutions in a alignment.
+	\end{block}
+
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{img/philo/align}
+		\caption{This alignment has 8 substitutions, so the distance between these sequences is 8.
+			Source: \cite{xiong2006essential}}			
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{Homoplasy}
+Substitutions are complex, for example:
+	\begin{block}{}
+		When $A$ is replace by $C$. The nucleotide may have actually undergone a
+		number of intermediate steps to become C, such as $A 	\rightarrow T 	\rightarrow  G 	\rightarrow C$
+	\end{block}
+
+\vspace{0.5cm}
+Such multiple substitutions obscure the estimation of the true evolutionary distances between sequences. This effect is known as \textbf{homoplasy} \cite{xiong2006essential}.
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{Substitution Models}
+
+	\begin{block}{}
+		The statistical models used to correct \textbf{homoplasy} are called substitution models or evolutionary models \cite{xiong2006essential}.
+	\end{block}
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Jukes–Cantor Model}	
+	This model assumes that all nucleotides are substituted with equal probability.
+
+	\begin{equation}
+		d_{AB} = -\frac{3}{4} ln \left[  1 - \left( \frac{4}{3} \right) p_{AB}  \right] 
+	\end{equation}\\
+	
+	\vspace{0.5cm}
+	
+	where, $d_{AB}$ is the evolutionary distance between $A$ and $B$. $p_{AB}$, is the observed sequence distance measured by the proportion of substitutions over the entire lenght. \\
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Jukes–Cantor Model}	
+	\textbf{Example}: If an alignment of sequences A and B is twenty nucleotides long and
+	six pairs are found to be different, the sequences differ by 30\%, or have an observed
+	distance 0.3. What is the distances using Jukes–Cantor Model?		
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Jukes–Cantor Model}	
+	Solution:
+	
+	\begin{equation*}
+	d_{AB} = -\frac{3}{4} ln \left[  1 - \left( \frac{4}{3} \right) p_{AB}  \right] 
+	\end{equation*}\\	
+	
+	$p_{AB} = 0.3$
+	
+	\begin{equation*}
+	d_{AB} = -\frac{3}{4} ln \left[  1 - \left( \frac{4}{3} \right) 0.3  \right]  = 0.38
+	\end{equation*}\\
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Kimura Model}	
+	This is a more sophisticated model in which mutation rates for transitions	and transversion are assumed to be different.
+	
+	\begin{equation}
+	d_{AB} = -\frac{1}{2} ln (1 -  2p_{ti} - p_{tv} ) - \frac{1}{4}  ln (1 - 2p_{tv} )  
+	\end{equation}\\
+	
+	\vspace{0.5cm}
+	
+	where, $d_{AB}$ is the evolutionary distance between $A$ and $B$. $p_{ti}$, is the observed
+	frequency for transition and $p_{tv}$ the frequency of transversion\footnotemark. \\
+	
+	\footnotetext[1]{Transitions are interchanges of two-ring purines (A  G) or of one-ring pyrimidines (C  T): they therefore involve bases of similar shape. Transversions are interchanges of purine for pyrimidine bases, which therefore involve exchange of one-ring and two-ring structures.}
+	
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Kimura Model}	
+	\textbf{Example}: The comparison of	sequences A and B differ by 30\%. If 20\% of changes are a result of transitions and 10\% of changes are a result of transversions. What is the distances using Kimura Model?		
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Kimura Model}	
+	Solution:
+	
+	\begin{equation*}
+	d_{AB} = -\frac{1}{2} ln (1 -  2p_{ti} - p_{tv} ) - \frac{1}{4}  ln (1 - 2p_{tv} )  
+	\end{equation*}\\	
+
+	$p_{ti} = 0.2$ \\
+	$p_{tv} = 0.1$ \\
+	
+	\begin{equation*}
+	d_{AB} = -\frac{1}{2} ln (1 -  2*0.2 - 0.1 ) - \frac{1}{4}  ln (1 - 2*0.1 )  = 0.40
+	\end{equation*}\\
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Protein sequences}	
+	\begin{block}{}
+		For protein sequences, the evolutionary distances from an alignment can be corrected using a PAM or JTT amino acid substitution matrix.
+	\end{block}	
+
+	For example, the Kimura model for correcting multiple substitutions in
+	protein distances is:
+	
+	\begin{equation}
+	d = -ln (1 - p - 0.2p^2)
+	\end{equation}
+	
+	where, $p$ is the observed pairwise distance between two sequences.
+
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{Among-Site Variations}
+	\begin{block}{}
+		In all these calculations, different positions in a sequence are assumed to be evolving
+		at the same rate. However, this assumption may not hold up in reality.
+	\end{block}
+
+	\begin{block}{}
+		Nevertheless:
+		\begin{itemize}
+			\item In DNA sequences, the rates of substitution differ for different codon positions. The	third codon mutates much faster than the other two.	
+			\item For protein sequences, some amino acids change much more rarely than others.
+		\end{itemize}
 
 	\end{block}
 \end{frame}
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{Among-Site Variations}
+	\begin{block}{}
+		It has been shown that there are always a proportion of positions in a sequence
+		dataset that have invariant rates and a proportion that have more variable rates.
+		\textbf{The distribution of variant sites follows a $\gamma$ distribution pattern.}
+	\end{block}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Multiple Substitutions}{Among-Site Variations}
+	Probability curves of $\gamma$ distribution. The mathematical function of the distribution is
+	$f(x) + (x^{\gamma-1} e^{-x} )/ \Gamma(\gamma)$. The curves assume different shapes depending on the $\gamma$-shape parameter ($\gamma$).
+	
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{img/philo/prop}
+		\caption{Probability curves of $\gamma$ distribution.
+			Source: \cite{xiong2006essential}}			
+	\end{figure}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Substitution Models}{Among-Site Variations}	
+	For the Jukes-Cantor model, the evolution distance can be adjusted:
+	
+	\begin{equation*}
+	d_{AB} = \frac{3}{4} \alpha \left[  1 - \left( \frac{4}{3}   p_{AB} \right)^{-1/\alpha} -1  \right] 
+	\end{equation*}\\	
+For the Kimura model, the evolutionary distance with $\gamma$ correction factor becomes:
+
+	\begin{equation*}
+	d_{AB} = \frac{\alpha}{2} \left[ (1 -  2p_{ti} - p_{tv} )^{-1/\alpha} - \frac{1}{2}  (1 - 2p_{tv} )^{-1/\alpha}  -\frac{1}{2}  \right] 
+	\end{equation*}\\	
+where $\alpha$ is the $\gamma$ correction factor (default = 1). 
+	
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 %-------------------------------------------------------
 %-------------------------------------------------------
