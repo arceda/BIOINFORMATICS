@@ -454,16 +454,113 @@ NJ requires the calculations of “r-values” and “transformed r-values” us
 	\begin{columns}
 		\begin{column}{0.48\textwidth}
 			\begin{figure}
-				\includegraphics[width=0.7\textwidth]{img/philo/NJ_5}
+				\includegraphics[width=0.7\textwidth]{img/philo/NJ_1}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}	
+			
+			\begin{figure}
+				\includegraphics[width=0.6\textwidth]{img/philo/NJ_5}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		
+			
+		\end{column}
+	\end{columns}
+
+	\begin{equation*}
+	d_{CU} = \frac{ (d_{AC} - d_{UA} ) + (d_{BC} - d_{UB} )}{2} 
+	=  \frac{ (0.35 - 0.15) + (0.45 - 0.25)} {2} 
+	\end{equation*}
+	\begin{equation*}		
+	d_{CU} = 0.2 
+	\end{equation*}
+	
+	\begin{equation*}
+	d_{DU} = \frac{ (d_{AD} - d_{UA} ) + (d_{BD} - d_{UB} )}{2} 
+	=  \frac{ (0.6 - 0.15) + (0.7 - 0.25)} {2} 
+	\end{equation*}
+	\begin{equation*}		
+	d_{DU} = 0.45 
+	\end{equation*}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Neighbor joining}{Example}
+	Based on the reduced distance matrix, a new set of $r$- and $r'$-values	are calculated (Use Eq. \ref{eq:nj_2} and \ref{eq:nj_3}). 
+	
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.6\textwidth]{img/philo/NJ_5}
 				%\caption{Image example in 2 gray levels.}
 			\end{figure}
 		\end{column}
 		\begin{column}{0.48\textwidth}
-			Eq. \ref{eq:nj_4}:
 			\begin{equation*}
-			\begin{split}				
-			d_{AU} = \frac{ d_{AB} + ( r'_A - r'_B ) }{2} = 0.15 \\
-			d_{BU} = \frac{ d_{AB} + ( r'_B - r'_A ) }{2} = 0.25 \\
+			\begin{split}
+			r_C = ? ; r'_C = ?  \\
+			r_D = ? ; r'_D = ? \\ 
+			r_U = ? ; r'_U = ? \\ 
+			\end{split}
+			\end{equation*} 
+		\end{column}
+	\end{columns}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\if\mysol1
+\begin{frame}{Neighbor joining}{Example}
+	Based on the reduced distance matrix, a new set of $r$- and $r'$-values	are calculated (Use Eq. \ref{eq:nj_2} and \ref{eq:nj_3}).
+	 
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.6\textwidth]{img/philo/NJ_5}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\begin{equation*}
+			\begin{split}
+			r_C = 0.75 ; r'_C = 0.75  \\
+			r_D = 1.00 ; r'_D = 1.00 \\ 
+			r_U = 0.65 ; r'_U = 0.65 \\ 
+			\end{split}
+			\end{equation*} 
+		\end{column}
+	\end{columns}
+\end{frame}
+\fi
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+\begin{frame}{Neighbor joining}{Example}
+	Now compute new corrected distances (Use Eq. \ref{eq:nj_1}).
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.6\textwidth]{img/philo/NJ_5}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\begin{equation*}
+			\begin{split}
+			d'_{CU} = ? \\
+			d'_{DU} = ? \\
+			d'_{CD} = ? \\
 			\end{split}
 			\end{equation*} 	
 		\end{column}
@@ -472,6 +569,112 @@ NJ requires the calculations of “r-values” and “transformed r-values” us
 %-------------------------------------------------------
 %-------------------------------------------------------
 
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\if\mysol1
+\begin{frame}{Neighbor joining}{Example}
+	Now compute new corrected distances (Use Eq. \ref{eq:nj_1}).
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.6\textwidth]{img/philo/NJ_5}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\begin{equation*}
+			\begin{split}
+			d'_{CU} = -0.500 \\
+			d'_{DU} = -0.375 \\
+			d'_{CD} = -0.325 \\
+			\end{split}
+			\end{equation*} 	
+		\end{column}
+	\end{columns}
+\end{frame}
+\fi
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Neighbor joining}{Example}	
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			Old matrix.
+			\begin{figure}
+				\includegraphics[width=0.7\textwidth]{img/philo/NJ_5}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			New matrix.
+			\begin{figure}
+				\includegraphics[width=0.8\textwidth]{img/philo/NJ_6}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}	
+		\end{column}
+	\end{columns}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Neighbor joining}{Example}	
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.7\textwidth]{img/philo/NJ_7}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			The pair of taxa with the shortest distances in the new matrix are separated ($CU$). \\
+			
+			Then, use Eq. \ref{eq:nj_4} to calculate $d_{CV}$ and $d_{UV}$.
+			
+			\begin{equation*}
+			\begin{split}				
+			d_{CV} = \frac{ d_{CU} + ( r'_C - r'_U ) }{2} = 0.15 \\
+			d_{UV} = \frac{ d_{CU} + ( r'_U - r'_C ) }{2} = 0.05 \\
+			\end{split}
+			\end{equation*} 
+		\end{column}
+	\end{columns}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
+
+
+%-------------------------------------------------------
+%-------------------------------------------------------
+\begin{frame}{Neighbor joining}{Example}	
+	\begin{columns}
+		\begin{column}{0.48\textwidth}
+			\begin{figure}
+				\includegraphics[width=0.7\textwidth]{img/philo/NJ_7}
+				%\caption{Image example in 2 gray levels.}
+			\end{figure}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			 Because $D$ is the last branch to be decomposed from the star tree, there is no need to convert to $r$ and $r'$.
+			 
+			\begin{equation*}		
+			d_D = \frac{(d_{DU} - d_{UV} ) + (d_{DC} - d_{CV} )}{2} 	
+			\end{equation*} 
+			\begin{equation*}	
+			d_D = \frac{(0.45 - 0.05) + (0.55 - 0.15)}{2}
+			\end{equation*}
+			\begin{equation*}	
+			d_D = 0.4		
+			\end{equation*} 
+		\end{column}
+	\end{columns}
+\end{frame}
+%-------------------------------------------------------
+%-------------------------------------------------------
 
 %-------------------------------------------------------
 %-------------------------------------------------------
