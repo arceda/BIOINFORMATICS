@@ -1,0 +1,205 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3cm, outer=3cm, inner=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{amsmath, xparse}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Bioinformática}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{-}
+\newcommand{\cstema}{Simulación de fluidos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[L]{ \raisebox{0.1\height}{\includegraphics[width=3cm]{img/logo_unsa}} }
+\fancyhead[C]{ \fontsize{7}{7}\selectfont	\csuniversidad \\ \csescuela \\ \textbf{\cscurso} \\ \raisebox{\height}{ } }
+\fancyhead[R]{ \raisebox{0.1\height}{\includegraphics[width=1.5cm]{img/logo_epcc_unsa}} }
+\fancyfoot[L]{MSc. Vicente Machaca}
+\fancyfoot[C]{\cscurso}
+\fancyfoot[R]{Página \thepage}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{forestgreen}{rgb}{0.12, 0.6, 0.32}
+\definecolor{blue}{rgb}{0, 0,1}
+
+\lstdefinelanguage{JavaScript}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for, let, const},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{blue}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{forestgreen}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{frame=tb,
+	language=JavaScript,
+	%backgroundcolor=\color{white},
+	extendedchars=true,
+	basicstyle=\footnotesize\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=none,
+	numberstyle=\footnotesize,
+	numbersep=9pt,
+	tabsize=2,
+	breaklines=true,
+	showtabs=false,
+	captionpos=b
+}
+
+\usepackage[english,spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para la imagen de fondo
+%\usepackage{eso-pic}
+%\newcommand\BackgroundPic{%
+%\put(0,0){%
+%\parbox[b][\paperheight]{\paperwidth}{%
+%\vfill
+%\centering
+%\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
+%\vfill
+%}}}
+
+
+%\title{\textbf{Lista de proyectos}}
+%\author{\csdocente}
+%\date{\today}
+
+
+
+\begin{document}
+		
+	%\maketitle
+	
+	\begin{center}	
+		\fontsize{15}{15} \textbf{Segundo Examen Parcial} %\\ \vspace{0.25cm}
+		%\csdocente \\
+	%	\today \\ \vspace{0.25cm}
+	\end{center}
+
+\begin{table}[h]
+	\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+		\hline 
+		\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+		\hline 
+		\csdocente & \csescuela & \cscurso    \\
+		\hline 
+	\end{tabular}
+\end{table}
+	
+
+\section{Resultados del estudiante}
+\begin{itemize}
+	\item (a) Conocimientos en computación
+	\item (b) Análisis de problemas.
+	\item (c) Diseño y desarrollo de soluciones.
+	\item (d) Trabajo individual y en equipo.
+	\item (h) Uso de herramientas modernas.
+\end{itemize}
+
+
+\section{Competencias del trabajo}
+\begin{itemize}
+	\item Investiga sobre algoritmos y conceptos de Bioinformática para el alineamiento de secuencias y generación de árboles filogenéticos (a, h).
+	\item Implementa una aplicación Web para el alineamiento de secuencias y generación de árboles filogenéticos (b, c, d).
+\end{itemize}
+
+\section{Equipos y materiales}
+\begin{itemize}
+	\item C++, Python, Javascript
+	\item BioPython
+\end{itemize}
+
+\section{Entregables}
+\begin{itemize}
+	\item Se debe elaborar un informe en \textit{Latex} donde se explique el proyecto.
+	\item En el informe se debe agregar un enlace al repositorio Github.
+\end{itemize}
+
+
+
+
+\clearpage
+
+%\section{Actividades}
+%En esta ocasión vamos a descargar dos secuencias de proteinas y aplicaremos el algoritmo de Dot matrix.
+
+
+
+
+\section{Descripción del trabajo}
+
+Implementar una aplicación Web, donde se pueda realizar el alineamiento de secuencias y generación de árboles filogenéticos. La aplicación sigue el siguiente proceso: (1) debe alinear las secuencias, (2) generar las distancias y (3) luego mostrar el árbol filogenético. Para esto la aplicación debe tener implementado estos algoritmos:
+	\begin{itemize}
+		\item Alineamiento global (Needleman–Wunsch).
+		\item Alineamiento local (Smith-waterman).
+		\item BLAST.
+		\item Alineamiento multiple MUSCLE o CLUSTAL (puede utilizar una librería).		
+		\item \textit{Jukes-cantor model} (puede utilizar una librería).
+		\item \textit{Kimura model} (puede utilizar una librería).
+		\item UPGMA.
+		\item \textit{Neighbor Joining.}
+	\end{itemize}
+
+Puede adicionar otros algoritmos según vea conveniente. Los algoritmos adicionales pueden ser utilizados con ayuda de librerías. Luego, tambien es importante alinear, procesar distancias y construir el árbol filogenético de manera aislada. Por ejemplo, el usuario podría solo querer construir el árbol filogenético, ingresando como entrada un \textit{csv} con las distancias entre secuencias.\\
+
+El informe debe tener un enlace a un repositorío, en este se evalurá la participación de cada integrante. Si se detecta que no hay trabajo en equipo, todo el grupo tendra puntos en contra.
+
+\section{Rúbricas}
+
+\begin{table}[H]
+	\begin{tabular}{|p{6cm}|x{2.5cm}|x{3cm}|x{2.5cm}|}
+		\hline 
+		\textbf{Rúbrica} & \textbf{Cumple}  & \textbf{Cumple con obs.}  & \textbf{No cumple} \\
+		\hline 
+		\textbf{Informe}: El informe debe estar en Latex, tiene un contenido detallado y un formato limpio y facil de leer (b, c).   & 2 & 1 & 0   \\
+		\hline 
+		\textbf{Trabajo en equipo}: Se comprueba el trabajo en equipo en el repositorio Github (d).  & 4 & 2 & 0   \\
+		\hline 
+		\textbf{Implementación}: La aplicación Web tiene todas las funcionalidades requeridas (b, c).  & 9 & 4.5 & 0   \\		\hline 	
+		\textbf{Métodos adicionales}: La aplicación tiene funcionalidadeds adicionales u otro métodos a los ya requeridos (h).  & 3 & 1.5 & 0   \\		\hline 	
+		\textbf{Presentación}: El alumno demuestra dominio del tema durante la presentación (a).  & 2 & 1 & 0   \\		\hline 		
+	\end{tabular}
+\end{table}
+	
+	
+%\clearpage
+
+%\bibliographystyle{apalike}
+%\bibliographystyle{IEEEtranN}
+%\bibliography{bibliography}	
+	
+\end{document}
