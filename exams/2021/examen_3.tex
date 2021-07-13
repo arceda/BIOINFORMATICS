@@ -1,0 +1,219 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm, bottom=2cm, outer=2cm, inner=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{multicol}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\csemail}{vmachacaa@unsa.edu.pe}
+\newcommand{\csdocente}{MSc. Vicente Machaca Arceda}
+\newcommand{\cscurso}{Bioinformática}
+\newcommand{\csuniversidad}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\csescuela}{Escuela Profesional de Ciencia de la Computación}
+\newcommand{\cspracnr}{}
+\newcommand{\cstema}{Operador exponencial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\cscurso}
+\lhead{\csdocente}
+\rfoot{Página \thepage}
+
+% Logos in first page
+\fancypagestyle{plain}{%
+	\renewcommand{\headrulewidth}{0pt}%
+	\fancyhf{}%
+	\fancyfoot[C]{\footnotesize Página \thepage\ }%
+	\fancyhead[L]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_unsa.jpg}}   }
+	\fancyhead[R]{ \raisebox{-0.2\height}{\includegraphics[height=13mm]{img/logo_epcc_unsa.png}}  }
+	\fancyhead[C]{  \fontsize{8}{8}\selectfont
+		\csuniversidad \\  
+		\textbf{\csescuela} \\ 
+		Curso: \cscurso 
+	}
+	%\renewcommand{\headrulewidth}{0.5pt}% Default \headrulewidth is 0.4pt
+	%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+	
+}
+\headheight 40pt              %% put this outside
+\headsep 10pt 
+
+
+% para el codigo fuente
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage[spanish]{babel}
+\AtBeginDocument{\selectlanguage{spanish}}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\refname}{Referencias}
+\renewcommand{\tablename}{Tabla}
+
+
+% para la imagen de fondo
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{../img/background4.png}%
+\vfill
+}}}
+
+
+\title{\textbf{Tercer examen parcial}}
+\author{\csdocente}
+\date{\today}
+
+	
+
+\begin{document}
+	
+% image background
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%\AddToShipoutPicture{\BackgroundPic}
+%\AddToShipoutPicture*{\BackgroundPic} %solo laprimera página
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+
+
+\maketitle
+
+\begin{table}[h]
+	\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+		\hline 
+		\textbf{DOCENTE} & \textbf{CARRERA}  & \textbf{CURSO}   \\
+		\hline 
+		\csdocente & \csescuela & \cscurso    \\
+		\hline 
+	\end{tabular}
+\end{table}
+
+%\begin{table}[h]
+%	\begin{tabular}{|x{5cm}|x{6cm}|x{5cm}|}
+%		\hline 
+%		\textbf{PRÁCTICA} & \textbf{TEMA}  & \textbf{DURACIÓN}   \\
+%		\hline 
+%		\cspracnr & \cstema & 3 horas   \\
+%		\hline 
+%	\end{tabular}
+%\end{table}
+
+
+\section{Competencias del curso}
+\begin{itemize}
+	\item Aplica las bases matemáticas y la teoría de la informática en algoritmos de Bioinformática.
+	\item Analiza, diseña y propone soluciones frente a problemas bioinformáticos.
+	\item Sabe cómo utilizar y conoce las bases computacionales de herramientas modernas de secuenciamiento,
+	alineamiento, árboles filogenéticos y mapeo de genomas.
+\end{itemize}
+
+
+\section{Competencias del trabajo}
+\begin{itemize}
+	\item Implementar un paper de investigación en Bioinformática.
+\end{itemize}
+
+\section{Equipos y materiales}
+\begin{itemize}
+	\item Editor de texto  Latex 
+\end{itemize}
+
+\section{Entregables}
+\begin{itemize}
+	\item Se debe elaborar un informe en Latex donde se desarrolle el trabajo solicitado.
+	\item El informe se desarrollará en grupos de 4.
+	\item El informe deberá estar correctamente citado utilizando las normas APA o IEEE.
+\end{itemize}
+
+
+
+\clearpage
+
+\section{Descripción del trabajo}
+
+Implementar un artículo académico de Bioinfomratica. Estos trabajos han sido escogidos, de manera tal que tengan una complejidad de nivel medio, se cuente con todos los recursos (bases de datos, librerías) y pueden ser llevados a cabo en una PC básica. Los trabajos a implementar son:
+
+\begin{itemize}
+	\item \textit{DNA sequence similarity analysis using image texture analysis based
+	on first-order statistics} \cite{delibacs2020dna}.
+	\item \textit{Use of image texture analysis to find DNA sequence similarities} \cite{chen2018use}.
+	\item A New Local Search Algorithm for the DNA
+	Fragment Assembly Problem \cite{alba2007new}.
+	\item \textit{Toward an Alignment-Free Method for Feature Extraction
+	and Accurate Classification of Viral Sequences} \cite{lebatteux2019toward}.
+
+	\item \textit{SplitThreader: Exploration and analysis of rearrangements in cancer genomes} \cite{nattestad2016splitthreader}.
+	
+	\item \textit{Protein structure prediction using multiple deep neural
+		networks in the 13th Critical Assessment of Protein
+		Structure Prediction (CASP13)} \cite{senior2019protein}.
+	
+	\item \textit{OmicsNet: a web-based tool for creation and visual
+		analysis of biological networks in 3D space} \cite{zhou2018omicsnet}.
+	
+	\item \textit{Ribbon: intuitive visualization for complex genomic variation} \cite{nattestad2021ribbon}.
+	
+\end{itemize}
+
+
+\section{Rúbricas}
+
+\begin{table}[hbt!]
+	\begin{tabular}{|p{8cm}|x{2.5cm}|x{3cm}|x{2.5cm}|}
+		\hline 
+		\textbf{Rúbrica} & \textbf{Cumple}  & \textbf{Cumple con obs.}  & \textbf{No cumple} \\
+		\hline 
+		\textbf{Informe}: El informe debe estar en Latex, con un formato limpio y facil de leer. Ademas, debe contener: descripción de los algoritmos utilizados, código fuente y resultados obtenidos.   & 3 & 1.5 & 0   \\ 
+		\hline 
+		
+		\textbf{Implementación}: Los alumnos han logrado implementar el algoritmo del paper.  & 7 & 3.5 & 0   \\ \hline
+		
+		\textbf{Resultados}: El grupo ha logrado replicar los resultados en un 50\%. Es decir, no es necesario utilizar todas las bases de datos utilizadas en el paper.  & 5 & 2.5 & 0   \\
+		\hline 
+		
+		\textbf{Presentación}: El alumno demuestra dominio del tema y conoce con exactitud cada parte de su código. Además, demuestra conocer la base matemática de su implementación. Se realizará preguntas a cada integrante del grupo, si un alumno no logra responder, tendra cero en esta rúbrica. & 5 & 2.5 & 0   \\
+		\hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\clearpage
+\bibliographystyle{ieeetr}
+\bibliography{bibliography}
+
+\end{document}
